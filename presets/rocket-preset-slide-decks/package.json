@@ -1,12 +1,19 @@
 {
   "name": "rocket-preset-slide-decks",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Slide Decks in HTML and Markdown for Rocket",
   "license": "MIT",
   "type": "module",
   "main": "index.js",
-  "files": ["*.js", "preset"],
-  "keywords": ["rocket", "preset", "slides"],
+  "files": [
+    "*.js",
+    "preset"
+  ],
+  "keywords": [
+    "rocket",
+    "preset",
+    "slides"
+  ],
   "dependencies": {
     "hirestime": "6.1.0",
     "slidem": "^1.2.8"

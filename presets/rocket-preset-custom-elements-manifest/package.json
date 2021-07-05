@@ -1,12 +1,19 @@
 {
   "name": "rocket-preset-custom-elements-manifest",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Custom Elements Manifest API Docs for Rocket",
   "license": "MIT",
   "type": "module",
   "main": "index.js",
-  "files": ["*.js", "preset"],
-  "keywords": ["rocket", "preset", "custom elements manifest"],
+  "files": [
+    "*.js",
+    "preset"
+  ],
+  "keywords": [
+    "rocket",
+    "preset",
+    "custom elements manifest"
+  ],
   "dependencies": {
     "@power-elements/json-viewer": "2.1.1",
     "eleventy-plugin-footnotes": "0.9.0",
