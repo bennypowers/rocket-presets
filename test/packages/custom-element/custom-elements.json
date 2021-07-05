@@ -1,0 +1,81 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CustomElement",
+          "declaration": {
+            "name": "CustomElement",
+            "module": "./custom-element.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "custom-element.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CustomElement",
+          "tagName": "custom-element",
+          "customElement": true,
+          "members": [
+            {
+              "kind": "field",
+              "name": "property",
+              "type": {"text":"boolean"}
+            },
+            {
+              "kind": "field",
+              "privacy": "private",
+              "name": "#child",
+              "type": { "text": "HTMLElement" }
+            },
+            {
+              "kind": "method",
+              "name": "method",
+              "return": { "type": { "text": "void" } },
+              "parameters": [{ "name": "param", "type":{"text":"string"}}]
+            }
+          ],
+          "attributes": [
+            { "name": "attribute", "type": {"text":"'d'"}, "description": "D Attribute" },
+            { "name": "property", "type": {"text":"boolean"}, "fieldName": "property" }
+          ],
+          "events": [{ "name": "change", "type": {"text": "CustomEvent<boolean>" } }],
+          "slots": [
+            { "name": "named", "description": "**named** slot" },
+            { "name": "", "description": "**anonymous** slot" }
+          ],
+          "superclass": { "name": "HTMLElement" }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CustomElement",
+          "declaration": {
+            "name": "CustomElement",
+            "module": "custom-element.js"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "name": "CustomElement",
+          "declaration": {
+            "name": "CustomElement",
+            "module": "custom-element.js"
+          }
+        }
+      ]
+    }
+  ]
+}

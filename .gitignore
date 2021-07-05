@@ -102,3 +102,16 @@ dist
 
 # TernJS port file
 .tern-port
+
+## Rocket ignore files
+test/docs/_merged_data/
+test/docs/_merged_assets/
+test/docs/_merged_includes/
+test/_site-dev
+test/_site
+
+## Presets docs ignores
+test/*.draft.md
+test/packages/*/docs/*.yml
+
+test-results

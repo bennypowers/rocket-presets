@@ -1,0 +1,17 @@
+{
+  "name": "test",
+  "version": "0.0.0",
+  "type": "module",
+  "private": true,
+  "dependencies": {
+    "rocket-preset-code-tabs": "0.0.0",
+    "rocket-preset-custom-elements-manifest": "0.0.0",
+    "rocket-preset-markdown-directives": "0.0.0",
+    "rocket-preset-playground-elements": "0.0.0",
+    "rocket-preset-slide-decks": "0.0.0",
+    "rocket-preset-webcomponents-dev": "0.0.0"
+  },
+  "devDependencies": {
+    "@rocket/launch": "^0.5.2"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "name": "root",
+  "private": true,
+  "type": "module",
+  "description": "Rocket Presets",
+  "repository": "git@github.com:bennypowers/rocket-presets.git",
+  "license": "MIT",
+  "workspaces": [
+    "presets/*",
+    "test"
+  ],
+  "scripts": {
+    "postinstall": "patch-package",
+    "analyze": "yarn wsrun analyze --exclude-missing",
+    "release": "changeset publish",
+    "test": "run-s test:*",
+    "test:build": "cd test && yarn rocket build",
+    "test:playwright": "yarn playwright test",
+    "update-snapshots": "yarn playwright test -u"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.16.0"
+  },
+  "devDependencies": {
+    "@custom-elements-manifest/analyzer": "^0.4.10",
+    "@playwright/test": "1.12.3",
+    "@pwrs/eslint-config": "^0.0.21",
+    "@rocket/cli": "^0.9.6",
+    "@rocket/search": "^0.4.0",
+    "@small-tech/esm-tape-runner": "^1.0.3",
+    "@web/test-runner": "^0.13.13",
+    "chalk": "^4.1.1",
+    "hirestime": "^6.1.0",
+    "mime-types": "^2.1.31",
+    "npm-run-all": "^4.1.5",
+    "patch-package": "^6.4.7",
+    "playwright": "^1.12.3",
+    "tap-spec": "^5.0.0",
+    "tape": "^5.2.2",
+    "typescript": "^4.3.5",
+    "wsrun": "^5.2.4"
+  }
+}

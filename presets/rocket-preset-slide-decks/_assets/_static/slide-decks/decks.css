@@ -1,0 +1,8 @@
+:root {
+  --primary: var(--primary-color, #e63946);
+  --secondary: var(--primary-color-darker, #a22831);
+}
+
+a.anchor {
+  display: none;
+}

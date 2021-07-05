@@ -1,0 +1,12 @@
+{{ content | safe }}
+
+<script async defer>
+  addEventListener('keyup', event => {
+    if (event.key !== 'f')
+      return;
+    else if (document.fullscreen)
+      document.exitFullscreen();
+    else
+      document.body.requestFullscreen();
+  });
+</script>

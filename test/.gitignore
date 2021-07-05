@@ -1,0 +1,10 @@
+## Rocket ignore files
+docs/_merged_data/
+docs/_merged_assets/
+docs/_merged_includes/
+_site-dev
+_site
+
+## Presets docs ignores
+*.draft.md
+packages/*/docs/*.yml

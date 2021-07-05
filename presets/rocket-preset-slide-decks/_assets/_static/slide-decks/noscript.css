@@ -1,0 +1,28 @@
+body {
+  padding-top: 80px;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h1,
+p {
+  text-align: center;
+}
+
+h1 span:first-child {
+  line-height: 0.6;
+  color: var(--tertiary);
+  font-size: 40vw;
+}
+
+h1 span:last-child {
+  line-height: 0.2;
+  color: var(--primary);
+  font-size: 20vw;
+}
+
+p {
+  font-size: 24px;
+}

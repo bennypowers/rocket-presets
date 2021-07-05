@@ -1,0 +1,14 @@
+{
+  "name": "rocket-preset-webcomponents-dev",
+  "version": "0.0.0",
+  "description": "Rocket plugin for webcomponents.dev snippets",
+  "license": "MIT",
+  "type": "module",
+  "main": "index.js",
+  "files": ["*.js", "preset"],
+  "keywords": ["rocket", "preset", "webcomponents.dev"],
+  "dependencies": {
+    "@pwrs/esbuild-plugin-replace": "^0.0.1",
+    "hirestime": "6.1.0"
+  }
+}

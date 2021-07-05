@@ -1,0 +1,10 @@
+#copy-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-top-left-radius: 6px;
+}
+
+::slotted(pre) {
+  margin-bottom: 0 !important;
+}
