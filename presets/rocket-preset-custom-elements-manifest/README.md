@@ -86,13 +86,13 @@ export default {
 
 With JavaScript enabled, users will be able to pick their preferred 'flavour', which persists across page loads via local storage.
 
-![Example showing docs for "custom-element"](./custom-elements-manifest-module.png)
+![Example showing docs for "custom-element"](https://raw.githubusercontent.com/bennypowers/rocket-presets/main/presets/rocket-preset-custom-elements-manifest/custom-elements-manifest-module.png)
 
 ### `<noscript>`
 
 Content is king! Users with JavaScript disabled get a gracefully degraded experience
 
-![Example showing noscript docs for "custom-element"](./custom-elements-manifest-module-noscript.png)
+![Example showing noscript docs for "custom-element"](https://raw.githubusercontent.com/bennypowers/rocket-presets/main/presets/rocket-preset-custom-elements-manifest/custom-elements-manifest-module-noscript.png)
 
 ## Styling
 

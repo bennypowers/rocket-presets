@@ -50,13 +50,13 @@ Now, to add a tab switcher to a page, write code blocks with the `tab ${id}` dir
 
 With JavaScript enabled, users will be able to pick their preferred 'flavour', which persists across page loads via local storage.
 
-![Example showing interactive tab picker for "package-managers"](./example-js.png)
+![Example showing interactive tab picker for "package-managers"](https://raw.githubusercontent.com/bennypowers/rocket-presets/main/presets/rocket-preset-code-tabs/example-js.png)
 
 ### `<noscript>`
 
 Content is king! Users with JavaScript disabled get a gracefully degraded experience
 
-![Example showing noninteractive listing of all tabs for "package-managers"](./example-noscript.png)
+![Example showing noninteractive listing of all tabs for "package-managers"](https://raw.githubusercontent.com/bennypowers/rocket-presets/main/presets/rocket-preset-code-tabs/example-noscript.png)
 
 ## Styling
 
