@@ -1,6 +1,6 @@
 {
   "name": "rocket-preset-slide-decks",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Slide Decks in HTML and Markdown for Rocket",
   "license": "MIT",
   "type": "module",

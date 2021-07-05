@@ -1,6 +1,6 @@
 {
   "name": "rocket-preset-code-tabs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Code tabs for Rocket",
   "license": "MIT",
   "type": "module",
@@ -20,6 +20,6 @@
     "esbuild-plugin-lit-css": "^1.0.0",
     "hirestime": "^6.1.0",
     "lit": "^2.0.0-rc.2",
-    "rocket-preset-markdown-directives": "^0.1.0"
+    "rocket-preset-markdown-directives": "^0.1.1"
   }
 }
