@@ -1,6 +1,6 @@
 {
   "name": "@pwrs/esbuild-plugin-replace",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Replace strings in files while bundling",
   "main": "index.js",
   "module": "index.js",
