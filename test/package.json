@@ -1,10 +1,10 @@
 {
   "name": "test",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "type": "module",
   "private": true,
   "dependencies": {
-    "rocket-preset-code-tabs": "0.1.1",
+    "rocket-preset-code-tabs": "0.1.2",
     "rocket-preset-custom-elements-manifest": "0.1.2",
     "rocket-preset-markdown-directives": "0.1.2",
     "rocket-preset-playground-elements": "0.1.1",

@@ -1,5 +1,11 @@
 # rocket-preset-code-tabs
 
+## 0.1.2
+
+### Patch Changes
+
+- 79a06ea: Fixes double-registry of code-copy element
+
 ## 0.1.1
 
 ### Patch Changes
