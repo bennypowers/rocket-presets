@@ -16,7 +16,7 @@ export async function bundle({ path }) {
     format: 'esm',
     target: 'es2020',
     outdir: 'docs/_merged_assets/_static/code-tabs',
-    external: ['*/code-copy'],
+    external: ['*/code-copy.js'],
     plugins: [litCssPlugin()],
     entryPoints: {
       'code-copy': join(path, 'components', 'code-copy.ts'),
