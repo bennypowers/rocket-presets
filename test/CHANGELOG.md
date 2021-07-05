@@ -1,5 +1,15 @@
 # test
 
+## 0.0.3
+
+### Patch Changes
+
+- Updated dependencies [16a669b]
+- Updated dependencies [16a669b]
+  - rocket-preset-custom-elements-manifest@0.1.2
+  - rocket-preset-markdown-directives@0.1.2
+  - rocket-preset-webcomponents-dev@0.1.2
+
 ## 0.0.2
 
 ### Patch Changes

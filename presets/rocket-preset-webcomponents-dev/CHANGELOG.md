@@ -1,5 +1,11 @@
 # rocket-preset-webcomponents-dev
 
+## 0.1.2
+
+### Patch Changes
+
+- 16a669b: Add wcd shortcode
+
 ## 0.1.1
 
 ### Patch Changes

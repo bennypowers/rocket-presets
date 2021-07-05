@@ -1,5 +1,11 @@
 # rocket-preset-markdown-directives
 
+## 0.1.2
+
+### Patch Changes
+
+- 16a669b: Move markdown shortcode to markdown-directives package
+
 ## 0.1.1
 
 ### Patch Changes
