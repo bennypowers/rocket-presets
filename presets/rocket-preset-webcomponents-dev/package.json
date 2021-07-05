@@ -12,6 +12,7 @@
   ],
   "dependencies": {
     "@pwrs/esbuild-plugin-replace": "^0.0.2",
-    "hirestime": "6.1.0"
+    "hirestime": "6.1.0",
+    "node-fetch": "2.6.1"
   }
 }

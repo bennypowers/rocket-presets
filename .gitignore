@@ -115,3 +115,4 @@ test/*.draft.md
 test/packages/*/docs/*.yml
 
 test-results
+test/tests/*/*-linux.png

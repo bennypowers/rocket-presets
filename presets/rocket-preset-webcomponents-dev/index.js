@@ -3,9 +3,11 @@ import addWebComponentDefinitions from 'eleventy-plugin-add-web-component-defini
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { addPlugin, adjustPluginOptions } from 'plugins-manager';
-import { markdownDirectives } from 'rocket-preset-markdown-directives';
+import { markdownDirectives, markdownShortcodePlugin } from 'rocket-preset-markdown-directives';
 
 import { bundle } from './lib/bundle.js';
+
+import { wcdShortcodePlugin } from './eleventy/wcdShortcode.js';
 
 const path = resolve(dirname(fileURLToPath(import.meta.url)));
 
@@ -16,6 +18,15 @@ export function webcomponentsDev() {
     async before11ty() { await bundle({ path }); },
 
     setupEleventyPlugins: [
+
+      addPlugin({ name: 'markdown-shortcode', plugin: markdownShortcodePlugin }),
+
+      addPlugin({
+        name: 'webcomponents-dev',
+        plugin: wcdShortcodePlugin,
+        location: 'markdown-shortcode',
+        how: 'after',
+      }),
 
       addPlugin({
         name: 'auto-import-custom-elements',

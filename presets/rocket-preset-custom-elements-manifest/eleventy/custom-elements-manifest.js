@@ -1,4 +1,3 @@
-import { markdown } from './markdown.js';
 import { prettyJson } from './prettyJson.js';
 import { linkToTypes } from './linkToTypes.js';
 import { trace } from '../lib/fp.js';
@@ -26,8 +25,6 @@ import {
 } from './filters.js';
 
 export function customElementsManifestPlugin(eleventyConfig, options) {
-  eleventyConfig.addPairedShortcode('markdown', markdown);
-
   eleventyConfig.addFilter('linkToTypes', linkToTypes(options));
 
   eleventyConfig.addFilter('prettyJson', prettyJson);

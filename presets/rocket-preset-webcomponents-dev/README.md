@@ -18,7 +18,13 @@ export default {
 
 ## Usage
 
-Now, to add interactive [webcomponents.dev](https://webcomponents.dev) to your page, add a `wcd` directive with demo id and optional filename arguments
+Now, to add an interactive [webcomponents.dev](https://webcomponents.dev) demo to your page, use the `wcd` shortcode.
+
+```markdown
+{% wcd 'ZCUsvyx06Au5j0yZzgG7', 'src/index.js' %}
+```
+
+To customize the preview code block, use the `wcd` markdown directive instead.
 
 ~~~markdown
 ```js wcd ZCUsvyx06Au5j0yZzgG7 src/index.js

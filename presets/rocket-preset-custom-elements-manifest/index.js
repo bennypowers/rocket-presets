@@ -7,6 +7,7 @@ import { addPlugin, adjustPluginOptions } from 'plugins-manager';
 import { customElementsManifestPlugin } from './eleventy/custom-elements-manifest.js';
 import { bundle } from './lib/bundle.js';
 import { getCustomElementsManifests } from './lib/getCustomElementsManifests.js';
+import { markdownShortcodePlugin } from 'rocket-preset-markdown-directives';
 
 const path = resolve(dirname(fileURLToPath(import.meta.url)));
 
@@ -23,6 +24,8 @@ export function customElementsManifest(options) {
     setupEleventyPlugins: [
 
       addPlugin({ name: 'footnotes', plugin: footnotes }),
+
+      addPlugin({ name: 'markdown-shortcode', plugin: markdownShortcodePlugin }),
 
       addPlugin({
         name: 'custom-elements-manifest',
