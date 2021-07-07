@@ -1,5 +1,12 @@
 # rocket-preset-code-tabs
 
+## 0.1.3
+
+### Patch Changes
+
+- c8bfcab: Allow ad-hoc (collectionless) tabs
+  Also hides tab icon if not defined
+
 ## 0.1.2
 
 ### Patch Changes
