@@ -20,6 +20,7 @@ img {
 
 #tabs button[selected] {
   background: var(--code-tabs-background, var(--markdown-syntax-background-color, #f6f8fa));
+  border-top: 2px solid var(--code-tabs-selected-highlight-color, var(--markdown-link-color));
 }
 
 #tabs button[selected]:focus,
@@ -34,6 +35,10 @@ img {
   left: -100%;
   border-bottom-right-radius: 3px;
   background-color: var(--code-tabs-background, var(--markdown-syntax-background-color, #f6f8fa));
+}
+
+#tabs button img:not([src]) {
+  display: none;
 }
 
 #tabpanel {

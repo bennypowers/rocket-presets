@@ -52,3 +52,7 @@ html.dark {
 type-doc.anonymous[kind="slot"] {
   --slnt: -15;
 }
+
+rocket-drawer#sidebar {
+  display: none !important;
+}

@@ -1,6 +1,7 @@
 import { SelectMixin } from '@pwrs/mixins/select/select-mixin';
 import { html, LitElement, PropertyValues, TemplateResult } from 'lit';
 import { customElement, property, queryAll, state } from 'lit/decorators.js';
+import { ifDefined } from 'lit/directives/if-defined.js';
 
 import './code-copy.js';
 
@@ -19,23 +20,42 @@ export interface Tab {
   label: string;
   iconHref?: string;
   iconTemplate?: string;
-  synonyms?: string[];
 }
 
 const INSTANCES = new Set<CodeTabs>();
 
+/**
+ * @csspart tablist - container for tab buttons
+ * @csspart tabpanel - container for content
+ * @csspart tab - tab button
+ * @csspart default-container - container for default tab
+ *
+ * @cssprop --code-tabs-icon-height - size of the tab icon
+ * @cssprop --code-tabs-tabs-background - background for the tablist
+ * @cssprop --code-tabs-justify-tabs - flex justification for tab buttons
+ * @cssprop --code-tabs-background - content and selected button background
+ * @cssprop --code-tabs-tabpanel-background - tabpanel background
+ * @cssprop --code-tabs-min-height - tabpanel minimum height
+ * @cssprop --code-tabs-selected-highlight-color - color for selected tab highlight
+ */
 @customElement('code-tabs')
 export class CodeTabs extends SelectMixin(LitElement) {
   static readonly allowedChildren = ['code-tab'];
 
   static readonly styles = [ButtonStyles, TabsStyles];
 
-  @state() labels = new Map<string, Tab>();
+  @state() private labels = new Map<string, Tab>();
 
+  /** The tab buttons. */
   @queryAll('[role="tab"]') tabs: NodeListOf<HTMLButtonElement>;
 
+  /** Which tab name to treat as default, in case the use has not yet made a selection. */
   @property({ attribute: 'default-tab' }) defaultTab: string;
 
+  /**
+   * Which tab collection to use.
+   * @see {#rocket-preset-code-tabs-js}
+   */
   @property() collection: string;
 
   constructor() {
@@ -92,18 +112,18 @@ export class CodeTabs extends SelectMixin(LitElement) {
   render(): TemplateResult {
     const items = this.items ?? [];
     return html`
-      <div id="tabs" role="tablist">
+      <div id="tabs" role="tablist" part="tablist">
         ${items.map(({ dataset: { id, iconHref, label } }, i) => html`
-        <button role="tab" data-id="${id}" @click="${this.onClickTab}" ?selected="${this.selectedIndex === i}">
-          <img .src="${iconHref}" role="presentation"/>
+        <button role="tab" part="tab" data-id="${id}" @click="${this.onClickTab}" ?selected="${this.selectedIndex === i}">
+          <img src="${ifDefined(iconHref)}" role="presentation"/>
           ${label}
         </button>
         `)}
       </div>
 
-      <div id="tabpanel" role="tabpanel">
+      <div id="tabpanel" role="tabpanel" part="tabpanel">
         <slot></slot>
-        <div id="default" ?hidden="${this.selectedItem}">
+        <div id="default" ?hidden="${this.selectedItem}" part="default-container">
           <slot name="default"></slot>
         </div>
       </div>
@@ -111,14 +131,13 @@ export class CodeTabs extends SelectMixin(LitElement) {
   }
 
   public selectId(idToSelect: string): void {
-    const synonyms = this.getLabel(idToSelect)?.synonyms ?? [];
     const index =
-      this.items.findIndex(({ dataset: { id } }) => id === idToSelect || synonyms.includes(id));
+      this.items.findIndex(({ dataset: { id } }) => id === idToSelect);
     if (index >= 0 && this.selectedIndex !== index)
       this.selectIndex(index);
   }
 
-  onSelect(): void {
+  override onSelect(): void {
     for (const tab of this.tabs)
       tab.removeAttribute('selected');
     const tab = this.tabs[this.selectedIndex as number];
@@ -152,15 +171,9 @@ export class CodeTabs extends SelectMixin(LitElement) {
     if (event) this.labels.clear();
     this.items
       .forEach(({ dataset: { id, label, iconHref, ...dataset } }: HTMLElement) => {
-        const synonyms = (dataset.synonyms ?? '')
-          .split(',')
-          .map(x => x.trim());
-
-        const pkg: Tab = { id, label, iconHref, synonyms };
+        const pkg: Tab = { id, label, iconHref };
 
         this.labels.set(pkg.id, pkg);
-        for (const synonym of synonyms)
-          this.labels.set(synonym, pkg);
       });
   }
 }

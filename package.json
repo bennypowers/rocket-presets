@@ -11,8 +11,10 @@
   ],
   "scripts": {
     "postinstall": "patch-package",
-    "analyze": "yarn wsrun analyze --exclude-missing",
-    "release": "changeset publish",
+    "analyze": "yarn wsrun --exclude-missing analyze",
+    "release": "run-s release:*",
+    "release:docs": "yarn analyze",
+    "release:publish": "changeset publish",
     "test": "run-s test:*",
     "test:build": "cd test && yarn rocket build",
     "test:playwright": "yarn playwright test",
@@ -23,6 +25,7 @@
   },
   "devDependencies": {
     "@custom-elements-manifest/analyzer": "^0.4.10",
+    "@custom-elements-manifest/to-markdown": "0.0.7",
     "@playwright/test": "1.12.3",
     "@pwrs/eslint-config": "^0.0.21",
     "@rocket/cli": "^0.9.6",

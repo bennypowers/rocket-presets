@@ -46,6 +46,57 @@ Now, to add a tab switcher to a page, write code blocks with the `tab ${id}` dir
 </code-tabs>
 ~~~
 
+### Ad-Hoc Tabs
+
+If you omit the `collection` attribute, you can create an ad-hoc tab group by passing the tab name as the first argument to the tab directive
+
+~~~markdown
+<code-tabs default-tab="my-element.js">
+
+  ```js tab my-element.js
+  class MyElement extends HTMLElement {
+    static is = 'my-element';
+  }
+
+  customElements.define(MyElement.is, MyElement);
+  ```
+
+  ```json tab custom-elements.json
+  {
+    "schemaVersion": "1.0.0",
+    "readme": "",
+    "modules": [
+      {
+        "kind": "javascript-module",
+        "path": "my-element.js",
+        "declarations": [
+          {
+            "kind": "class",
+            "description": "",
+            "name": "MyElement",
+            "tagName": "my-element",
+            "members": [
+              {
+                "kind": "field",
+                "name": "is",
+                "default": "'my-element'",
+                "static": true
+              }
+            ],
+            "superclass": {
+              "name": "HTMLElement"
+            }
+          }
+        ]
+      }
+    ]
+  }
+
+  ```
+
+</code-tabs>
+~~~
+
 ## Results
 
 With JavaScript enabled, users will be able to pick their preferred 'flavour', which persists across page loads via local storage.
@@ -61,3 +112,150 @@ Content is king! Users with JavaScript disabled get a gracefully degraded experi
 ## Styling
 
 Enjoy consistent site-wide theming by setting `--markdown-syntax-background-color` and `--markdown-table-row-odd-background-color`
+
+
+# `rocket-preset-code-tabs.js`:
+
+## Functions
+
+  | name | description | parameters | return |
+  |------|-------------|------------|--------|
+  | codeTabs | Set up code tabs rocket preset | options CodeTabsOptions | RocketPreset |
+<hr/>
+
+## Exports
+
+| kind | name      | declaration | module | package |
+|------|-----------|-------------|--------|---------|
+|js |codeTabs |codeTabs | rocket-preset-code-tabs.js |  |[object Object] | | |
+# `components/code-copy.ts`:
+
+## class: `CodeCopy`
+
+  ### Superclass
+
+  | name | module | package |
+  |------|--------|---------|
+  |LitElement | |lit |
+
+
+### Fields
+
+| name | privacy | type | default | description | inheritedFrom |
+|------|---------|------|---------|-------------|---------------|
+|is | |`string` |`'code-copy'` | | | |
+|styles | |`array` |`[ButtonStyles, CopyStyles]` | | | |
+|copyButtonText | |`string` |`'Copy'` | | | |
+
+
+### Methods
+
+| name | privacy | description | parameters | return | inheritedFrom |
+|------|---------|-------------|------------|--------|---------------|
+|render | | | |TemplateResult | | |
+|onCopy | | | |Promise<void> | | |
+
+
+<hr></hr>
+
+## Exports
+
+| kind | name      | declaration | module | package |
+|------|-----------|-------------|--------|---------|
+|js |CodeCopy |CodeCopy | components/code-copy.ts |  |[object Object] | | |
+# `components/code-tabs.ts`:
+
+## class: `CodeTabs`
+
+  ### Superclass
+
+  | name | module | package |
+  |------|--------|---------|
+  |LitElement | |lit |
+
+
+### Mixins
+
+| name | module    | package |
+|------|-----------|---------|
+|SelectMixin | |@pwrs/mixins/select/select-mixin |
+
+
+### Fields
+
+| name | privacy | type | default | description | inheritedFrom |
+|------|---------|------|---------|-------------|---------------|
+|allowedChildren | |`array` |`['code-tab']` | | | |
+|styles | |`array` |`[ButtonStyles, TabsStyles]` | | | |
+|labels | | |`new Map<string, Tab>()` | | | |
+|tabs | |`NodeListOf<HTMLButtonElement>` | | | | |
+|defaultTab | |`string` | | | | |
+|collection | |`string` | | | | |
+|initialSelectedIndex |protected |`number` |`0` | | | |
+|onClickTab | | | | | | |
+
+
+### Methods
+
+| name | privacy | description | parameters | return | inheritedFrom |
+|------|---------|-------------|------------|--------|---------------|
+|firstUpdated | | |changed PropertyValues<this> |Promise<void> | | |
+|updated | | |changed PropertyValues<this> |void | | |
+|getInitialSelectedIndex |protected | | |Promise<number> | | |
+|initCollection |private | | | | | |
+|render | | | |TemplateResult | | |
+|selectId |public | |idToSelect string |void | | |
+|onSelect |private | | |void | | |
+|onClickTab |private | |event Event & { target: HTMLButtonElement } | | | |
+|getLabel |private | |tag string | | | |
+|initLabels |protected | |event Event |void | | |
+
+
+### CSS Properties
+
+| name | description |
+|------|-----------|
+|--code-tabs-icon-height |size of the tab icon |
+|--code-tabs-tabs-background |background for the tablist |
+|--code-tabs-justify-tabs |flex justification for tab buttons |
+|--code-tabs-background |content and selected button background |
+|--code-tabs-tabpanel-background |tabpanel background |
+|--code-tabs-min-height |tabpanel minimum height |
+|--code-tabs-selected-highlight-color |color for selected tab highlight |
+
+
+<hr></hr>
+
+## class: `CodeTab`
+
+  ### Superclass
+
+  | name | module | package |
+  |------|--------|---------|
+  |LitElement | |lit |
+
+
+### Fields
+
+| name | privacy | type | default | description | inheritedFrom |
+|------|---------|------|---------|-------------|---------------|
+|styles | |`array` |`[TabStyles]` | | | |
+|tab | |`string` | | | | |
+|noCopy | |`boolean` |`false` | | | |
+
+
+### Methods
+
+| name | privacy | description | parameters | return | inheritedFrom |
+|------|---------|-------------|------------|--------|---------------|
+|render | | | |TemplateResult | | |
+
+
+<hr></hr>
+
+## Exports
+
+| kind | name      | declaration | module | package |
+|------|-----------|-------------|--------|---------|
+|js |CodeTabs |CodeTabs | components/code-tabs.ts |  |[object Object] | | |
+|js |CodeTab |CodeTab | components/code-tabs.ts |  |[object Object] | | |

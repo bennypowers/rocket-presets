@@ -42,7 +42,7 @@ test.describe('JavaScript enabled', () => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/webcomponents-dev/`, { waitUntil: 'networkidle' });
     await (await page.$('wcd-snippet')).scrollIntoViewIfNeeded();
     expect(await page.screenshot({ fullPage: true }))
-      .toMatchSnapshot('webcomponents-dev-initial.png');
+      .toMatchSnapshot('webcomponents-dev-initial.png', { threshold: 0.2 });
     await page.click('wcd-snippet [part="button"]');
     await page.waitForLoadState('networkidle');
     const iframe = await page.$('wcd-snippet iframe');
@@ -53,14 +53,14 @@ test.describe('JavaScript enabled', () => {
     await preview.waitForLoadState('networkidle');
     await iframe.waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
-      .toMatchSnapshot('webcomponents-dev-after-loaded.png');
+      .toMatchSnapshot('webcomponents-dev-after-loaded.png', { threshold: 0.2 });
   });
 
   test('rocket-preset-webcomponents-dev-shortcode', async ({ page }) => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/webcomponents-dev/shortcode/`, { waitUntil: 'networkidle' });
     await (await page.$('wcd-snippet')).scrollIntoViewIfNeeded();
     expect(await page.screenshot({ fullPage: true }))
-      .toMatchSnapshot('webcomponents-dev-shortcode-initial.png');
+      .toMatchSnapshot('webcomponents-dev-shortcode-initial.png', { threshold: 0.2 });
     await page.click('wcd-snippet [part="button"]');
     await page.waitForLoadState('networkidle');
     const iframe = await page.$('wcd-snippet iframe');
@@ -71,7 +71,7 @@ test.describe('JavaScript enabled', () => {
     await preview.waitForLoadState('networkidle');
     await iframe.waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
-      .toMatchSnapshot('webcomponents-dev-shortcode-after-loaded.png');
+      .toMatchSnapshot('webcomponents-dev-shortcode-after-loaded.png', { threshold: 0.2 });
   });
 
   test('rocket-preset-slide-decks', async ({ page }) => {

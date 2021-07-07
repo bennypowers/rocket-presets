@@ -7,15 +7,25 @@ import { markdownDirectives } from 'rocket-preset-markdown-directives';
 import { createTab } from './lib/createTab.js';
 import { bundle } from './lib/bundle.js';
 
+/** @type{(str: string) => string} */
 const dash = str => str.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
 
 const path = resolve(dirname(fileURLToPath(import.meta.url)));
 
+/** @typedef {Record<string, Omit<import('./components/code-tabs').Tab, 'id'>>} Collection */
+
 /**
- * @return {Partial<import('@rocket/cli/dist-types/types/main').RocketPreset>}
+ * @typedef {object} CodeTabsOptions
+ * @property {Record<string, Collection>} collections
  */
-export function codeTabs({ collections }) {
-  const collectionMap = new Map(Object.entries(collections).map(([k, v]) => [
+
+/**
+ * Set up code tabs rocket preset
+ * @param {CodeTabsOptions} options - tab collections
+ * @return {import('@rocket/cli/dist-types/types/main').RocketPreset}
+ */
+export function codeTabs(options) {
+  const collectionMap = new Map(Object.entries(options?.collections ?? {}).map(([k, v]) => [
     dash(k),
     new Map(Object.entries(v).map(([k, v]) => [k, { id: k, ...v }])),
   ]));

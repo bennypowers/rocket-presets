@@ -1178,6 +1178,11 @@
     globby "^11.0.1"
     typescript "^4.3.2"
 
+"@custom-elements-manifest/to-markdown@0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@custom-elements-manifest/to-markdown/-/to-markdown-0.0.7.tgz#25bade551cd687eb9d7cef3d287aec3878584956"
+  integrity sha512-wAz/Q9P0zMwan1Jhu7wp6liPbLH3ZrhVgCwZioIJtn8gbHhUyV1YYkXsCmuwYnUQHVrZNwyQ84wToSqVDbrDqg==
+
 "@eslint/eslintrc@^0.4.2":
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/@eslint/eslintrc/-/eslintrc-0.4.2.tgz#f63d0ef06f5c0c57d76c4ab5f63d3835c51b0179"
@@ -2005,10 +2010,10 @@
     dependency-graph "^0.10.0"
     sax-wasm "^2.0.0"
 
-"@rocket/launch@^0.5.2":
-  version "0.5.2"
-  resolved "https://registry.yarnpkg.com/@rocket/launch/-/launch-0.5.2.tgz#5bac8cdfe04a4ba704b805cb26968ba026a765df"
-  integrity sha512-Zf8rk2pUmHO+cmVCaSplUtJfG3r7FXbRPD45IZL5XJMnQ7yZJd6xdQhaamllNGYZTpiQzWarp2o+G7FbtQ/7og==
+"@rocket/launch@^0.5.3":
+  version "0.5.3"
+  resolved "https://registry.yarnpkg.com/@rocket/launch/-/launch-0.5.3.tgz#8891736834cb4962598467a241b4fc71ae171aad"
+  integrity sha512-0qjeL7QW6nlFbsVv/4YzrECZtFa3jlpRFWvQSlYDCpluYJsrCEIjzwieRkeAHvWjK6j7QCCrdjNxofvgfahCqg==
   dependencies:
     "@rocket/drawer" "^0.1.3"
     "@rocket/navigation" "^0.2.1"
@@ -4648,10 +4653,10 @@ esbuild-plugin-lit-css@^1.0.0:
   dependencies:
     "@pwrs/lit-css" "^1.0.0"
 
-esbuild@^0.12.14:
-  version "0.12.14"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.14.tgz#43157dbd0b36d939247d4eb4909a4886ac40f82e"
-  integrity sha512-z8p+6FGiplR7a3pPonXREbm+8IeXjBGvDpVidZmGB/AJMsJSfGCU+n7KOMCazA9AwvagadRWBhiKorC0w9WJvw==
+esbuild@^0.12.15:
+  version "0.12.15"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.12.15.tgz#9d99cf39aeb2188265c5983e983e236829f08af0"
+  integrity sha512-72V4JNd2+48eOVCXx49xoSWHgC3/cCy96e7mbXKY+WOWghN00cCmlGnwVLRhRHorvv0dgCyuMYBZlM2xDM5OQw==
 
 escalade@^3.1.1:
   version "3.1.1"

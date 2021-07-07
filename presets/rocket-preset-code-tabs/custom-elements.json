@@ -1,0 +1,436 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "rocket-preset-code-tabs.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "codeTabs",
+          "parameters": [
+            {
+              "name": "options",
+              "description": "tab collections",
+              "type": {
+                "text": "CodeTabsOptions"
+              }
+            }
+          ],
+          "description": "Set up code tabs rocket preset",
+          "return": {
+            "type": {
+              "text": "RocketPreset"
+            }
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "codeTabs",
+          "declaration": {
+            "name": "codeTabs",
+            "module": "rocket-preset-code-tabs.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/code-copy.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CodeCopy",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "'code-copy'"
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[ButtonStyles, CopyStyles]"
+            },
+            {
+              "kind": "field",
+              "name": "copyButtonText",
+              "type": {
+                "text": "string"
+              },
+              "default": "'Copy'"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onCopy",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CodeCopy",
+          "declaration": {
+            "name": "CodeCopy",
+            "module": "components/code-copy.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/code-tabs.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CodeTabs",
+          "cssProperties": [
+            {
+              "description": "size of the tab icon",
+              "name": "--code-tabs-icon-height"
+            },
+            {
+              "description": "background for the tablist",
+              "name": "--code-tabs-tabs-background"
+            },
+            {
+              "description": "flex justification for tab buttons",
+              "name": "--code-tabs-justify-tabs"
+            },
+            {
+              "description": "content and selected button background",
+              "name": "--code-tabs-background"
+            },
+            {
+              "description": "tabpanel background",
+              "name": "--code-tabs-tabpanel-background"
+            },
+            {
+              "description": "tabpanel minimum height",
+              "name": "--code-tabs-min-height"
+            },
+            {
+              "description": "color for selected tab highlight",
+              "name": "--code-tabs-selected-highlight-color"
+            }
+          ],
+          "cssParts": [
+            {
+              "description": "container for tab buttons",
+              "name": "tablist"
+            },
+            {
+              "description": "container for content",
+              "name": "tabpanel"
+            },
+            {
+              "description": "tab button",
+              "name": "tab"
+            },
+            {
+              "description": "container for default tab",
+              "name": "default-container"
+            }
+          ],
+          "members": [
+            {
+              "kind": "field",
+              "name": "allowedChildren",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "['code-tab']"
+            },
+            {
+              "kind": "field",
+              "name": "styles",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[ButtonStyles, TabsStyles]"
+            },
+            {
+              "kind": "field",
+              "name": "labels",
+              "default": "new Map<string, Tab>()"
+            },
+            {
+              "kind": "field",
+              "name": "tabs",
+              "type": {
+                "text": "NodeListOf<HTMLButtonElement>"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "defaultTab",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "collection",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "initialSelectedIndex",
+              "type": {
+                "text": "number"
+              },
+              "privacy": "protected",
+              "default": "0"
+            },
+            {
+              "kind": "method",
+              "name": "firstUpdated",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "changed",
+                  "type": {
+                    "text": "PropertyValues<this>"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "updated",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "changed",
+                  "type": {
+                    "text": "PropertyValues<this>"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getInitialSelectedIndex",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "Promise<number>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "initCollection",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "selectId",
+              "privacy": "public",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "idToSelect",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "onSelect",
+              "privacy": "private",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "onClickTab",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "event",
+                  "type": {
+                    "text": "Event & { target: HTMLButtonElement }"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "getLabel",
+              "privacy": "private",
+              "parameters": [
+                {
+                  "name": "tag",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "initLabels",
+              "privacy": "protected",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "event",
+                  "optional": true,
+                  "type": {
+                    "text": "Event"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "onClickTab"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "SelectMixin",
+              "package": "@pwrs/mixins/select/select-mixin"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        },
+        {
+          "kind": "class",
+          "description": "",
+          "name": "CodeTab",
+          "members": [
+            {
+              "kind": "field",
+              "name": "styles",
+              "type": {
+                "text": "array"
+              },
+              "static": true,
+              "default": "[TabStyles]"
+            },
+            {
+              "kind": "field",
+              "name": "tab",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "noCopy",
+              "type": {
+                "text": "boolean"
+              },
+              "default": "false"
+            },
+            {
+              "kind": "method",
+              "name": "render",
+              "return": {
+                "type": {
+                  "text": "TemplateResult"
+                }
+              }
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "CodeTabs",
+          "declaration": {
+            "name": "CodeTabs",
+            "module": "components/code-tabs.ts"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CodeTab",
+          "declaration": {
+            "name": "CodeTab",
+            "module": "components/code-tabs.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

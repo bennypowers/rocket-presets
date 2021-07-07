@@ -9,18 +9,13 @@ export function createTab(tab, collections, { node, page, parent }) {
   const collectionName =
     parent.children[idx]
       .value
-      .match(/collection="(\w|-)+"/)[0]
+      .match(/collection="(\w|-)+"/)
+      ?.[0]
       ?.replace(/collection="(.*)"/, '$1');
 
   const collection = collections.get(collectionName);
 
-  if (!collection)
-    throw new Error(`Could not find tab collection ${collectionName}`);
-
   const tagName = 'code-tab';
-
-  if (!collection)
-    throw new Error(`Unknown collection for ${tab}`);
 
   try {
     const { id, label, iconHref } = collection.get(tab);
@@ -33,6 +28,12 @@ export function createTab(tab, collections, { node, page, parent }) {
       },
     };
   } catch {
-    throw new Error(`Could not get tab collection for ${tab}`);
+    return {
+      tagName,
+      attributes: {
+        'data-id': tab,
+        'data-label': tab,
+      },
+    };
   }
 }
