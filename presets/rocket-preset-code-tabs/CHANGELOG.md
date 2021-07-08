@@ -1,5 +1,11 @@
 # rocket-preset-code-tabs
 
+## 0.1.4
+
+### Patch Changes
+
+- 9ca9553: Added `content` CSS shadow part to `<code-tab>`
+
 ## 0.1.3
 
 ### Patch Changes
