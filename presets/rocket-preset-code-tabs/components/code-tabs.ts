@@ -137,6 +137,7 @@ export class CodeTabs extends SelectMixin(LitElement) {
       this.selectIndex(index);
   }
 
+  /** @private */
   override onSelect(): void {
     for (const tab of this.tabs)
       tab.removeAttribute('selected');
@@ -178,6 +179,9 @@ export class CodeTabs extends SelectMixin(LitElement) {
   }
 }
 
+/**
+ * @csspart content - container for tab content
+ */
 @customElement('code-tab')
 export class CodeTab extends LitElement {
   static readonly styles = [TabStyles];
@@ -187,16 +191,9 @@ export class CodeTab extends LitElement {
   @property({ type: Boolean, attribute: 'no-copy' }) noCopy = false;
 
   render(): TemplateResult {
-    if (this.noCopy) {
-      return html`
-        <slot></slot>
-      `;
-    } else {
-      return html`
-        <code-copy>
-          <slot></slot>
-        </code-copy>
-      `;
-    }
+    if (this.noCopy)
+      return html`<div part="content"><slot></slot></div>`;
+    else
+      return html`<code-copy part="content"><slot></slot></code-copy>`;
   }
 }

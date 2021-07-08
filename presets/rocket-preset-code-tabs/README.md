@@ -96,7 +96,6 @@ If you omit the `collection` attribute, you can create an ad-hoc tab group by pa
 
 </code-tabs>
 ~~~
-
 ## Results
 
 With JavaScript enabled, users will be able to pick their preferred 'flavour', which persists across page loads via local storage.
@@ -117,12 +116,12 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 # `rocket-preset-code-tabs.js`:
 
 ## Functions
-
+      
   | name | description | parameters | return |
   |------|-------------|------------|--------|
-  | codeTabs | Set up code tabs rocket preset | options CodeTabsOptions | RocketPreset |
+  |codeTabs |Set up code tabs rocket preset |options CodeTabsOptions |RocketPreset |
 <hr/>
-
+  
 ## Exports
 
 | kind | name      | declaration | module | package |
@@ -130,10 +129,10 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 |js |codeTabs |codeTabs | rocket-preset-code-tabs.js |  |[object Object] | | |
 # `components/code-copy.ts`:
 
-## class: `CodeCopy`
-
+## class: `CodeCopy` 
+  
   ### Superclass
-
+  
   | name | module | package |
   |------|--------|---------|
   |LitElement | |lit |
@@ -157,7 +156,7 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 
 <hr></hr>
-
+  
 ## Exports
 
 | kind | name      | declaration | module | package |
@@ -165,10 +164,10 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 |js |CodeCopy |CodeCopy | components/code-copy.ts |  |[object Object] | | |
 # `components/code-tabs.ts`:
 
-## class: `CodeTabs`
-
+## class: `CodeTabs` 
+  
   ### Superclass
-
+  
   | name | module | package |
   |------|--------|---------|
   |LitElement | |lit |
@@ -187,10 +186,10 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 |------|---------|------|---------|-------------|---------------|
 |allowedChildren | |`array` |`['code-tab']` | | | |
 |styles | |`array` |`[ButtonStyles, TabsStyles]` | | | |
-|labels | | |`new Map<string, Tab>()` | | | |
-|tabs | |`NodeListOf<HTMLButtonElement>` | | | | |
-|defaultTab | |`string` | | | | |
-|collection | |`string` | | | | |
+|labels |private | |`new Map<string, Tab>()` | | | |
+|tabs | |`NodeListOf<HTMLButtonElement>` | |The tab buttons. | | |
+|defaultTab | |`string` | |Which tab name to treat as default, in case the use has not yet made a selection. | | |
+|collection | |`string` | |Which tab collection to use. | | |
 |initialSelectedIndex |protected |`number` |`0` | | | |
 |onClickTab | | | | | | |
 
@@ -226,10 +225,10 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 <hr></hr>
 
-## class: `CodeTab`
-
+## class: `CodeTab` 
+  
   ### Superclass
-
+  
   | name | module | package |
   |------|--------|---------|
   |LitElement | |lit |
@@ -252,7 +251,7 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 
 <hr></hr>
-
+  
 ## Exports
 
 | kind | name      | declaration | module | package |

@@ -187,6 +187,7 @@
             {
               "kind": "field",
               "name": "labels",
+              "privacy": "private",
               "default": "new Map<string, Tab>()"
             },
             {
@@ -194,21 +195,24 @@
               "name": "tabs",
               "type": {
                 "text": "NodeListOf<HTMLButtonElement>"
-              }
+              },
+              "description": "The tab buttons."
             },
             {
               "kind": "field",
               "name": "defaultTab",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "Which tab name to treat as default, in case the use has not yet made a selection."
             },
             {
               "kind": "field",
               "name": "collection",
               "type": {
                 "text": "string"
-              }
+              },
+              "description": "Which tab collection to use."
             },
             {
               "kind": "field",
@@ -298,12 +302,12 @@
             {
               "kind": "method",
               "name": "onSelect",
-              "privacy": "private",
               "return": {
                 "type": {
                   "text": "void"
                 }
-              }
+              },
+              "privacy": "private"
             },
             {
               "kind": "method",
@@ -371,6 +375,12 @@
           "kind": "class",
           "description": "",
           "name": "CodeTab",
+          "cssParts": [
+            {
+              "description": "container for tab content",
+              "name": "content"
+            }
+          ],
           "members": [
             {
               "kind": "field",

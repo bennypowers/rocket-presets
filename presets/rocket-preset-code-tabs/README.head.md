@@ -46,6 +46,56 @@ Now, to add a tab switcher to a page, write code blocks with the `tab ${id}` dir
 </code-tabs>
 ~~~
 
+### Ad-Hoc Tabs
+
+If you omit the `collection` attribute, you can create an ad-hoc tab group by passing the tab name as the first argument to the tab directive
+
+~~~markdown
+<code-tabs default-tab="my-element.js">
+
+  ```js tab my-element.js
+  class MyElement extends HTMLElement {
+    static is = 'my-element';
+  }
+
+  customElements.define(MyElement.is, MyElement);
+  ```
+
+  ```json tab custom-elements.json
+  {
+    "schemaVersion": "1.0.0",
+    "readme": "",
+    "modules": [
+      {
+        "kind": "javascript-module",
+        "path": "my-element.js",
+        "declarations": [
+          {
+            "kind": "class",
+            "description": "",
+            "name": "MyElement",
+            "tagName": "my-element",
+            "members": [
+              {
+                "kind": "field",
+                "name": "is",
+                "default": "'my-element'",
+                "static": true
+              }
+            ],
+            "superclass": {
+              "name": "HTMLElement"
+            }
+          }
+        ]
+      }
+    ]
+  }
+
+  ```
+
+</code-tabs>
+~~~
 ## Results
 
 With JavaScript enabled, users will be able to pick their preferred 'flavour', which persists across page loads via local storage.
