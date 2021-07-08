@@ -1,5 +1,12 @@
 # rocket-preset-code-tabs
 
+## 0.2.1
+
+### Patch Changes
+
+- c027193: Added `copy-icon` and `success-icon` slots to `<code-copy>` as well as `copy` event.
+  Added screen reader a11y for `<code-copy>`
+
 ## 0.2.0
 
 ### Minor Changes
