@@ -37,6 +37,11 @@ const INSTANCES = new Set<CodeTabs>();
  * @cssprop --code-tabs-tabpanel-background - tabpanel background
  * @cssprop --code-tabs-min-height - tabpanel minimum height
  * @cssprop --code-tabs-selected-highlight-color - color for selected tab highlight
+
+ * @cssprop [--code-button-background=transparent] - tab button background
+ * @cssprop [--code-button-color=inherit] - tab button text color
+ * @cssprop [--code-button-focus-background=hsla(0 100% 0% / 0.75)] - tab button background when focused
+ * @cssprop [--code-button-focus-color=hsla(0 100% 100% / 0.75)] - tab button text color when focused
  */
 @customElement('code-tabs')
 export class CodeTabs extends SelectMixin(LitElement) {
@@ -181,6 +186,11 @@ export class CodeTabs extends SelectMixin(LitElement) {
 
 /**
  * @csspart content - container for tab content
+ *
+ * @cssprop [--code-button-background=transparent] - copy button background
+ * @cssprop [--code-button-color=inherit] - copy button text color
+ * @cssprop [--code-button-focus-background=hsla(0 100% 0% / 0.75)] - copy button background when focused
+ * @cssprop [--code-button-focus-color=hsla(0 100% 100% / 0.75)] - copy button text color when focused
  */
 @customElement('code-tab')
 export class CodeTab extends LitElement {
