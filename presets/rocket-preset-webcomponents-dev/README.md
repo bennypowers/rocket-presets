@@ -60,3 +60,81 @@ class MyCounter extends HTMLElement {
 customElements.define('my-counter', MyCounter);
 ```
 ~~~
+
+## API Docs
+
+
+### `rocket-preset-webcomponents-dev.js`:
+
+#### Functions
+
+| Name             | Description | Parameters | Return |
+| ---------------- | ----------- | ---------- | ------ |
+| webcomponentsDev |             |            |        |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name             | Declaration      | Module                             | Package |
+| ---- | ---------------- | ---------------- | ---------------------------------- | ------- |
+| js   | webcomponentsDev | webcomponentsDev | rocket-preset-webcomponents-dev.js |         |
+
+### `eleventy/wcdShortcode.js`:
+
+#### Functions
+
+| Name               | Description | Parameters       | Return |
+| ------------------ | ----------- | ---------------- | ------ |
+| wcdShortcodePlugin |             | `eleventyConfig` |        |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name               | Declaration        | Module                   | Package |
+| ---- | ------------------ | ------------------ | ------------------------ | ------- |
+| js   | wcdShortcodePlugin | wcdShortcodePlugin | eleventy/wcdShortcode.js |         |
+
+### `components/wcd-snippet/wcd-snippet.ts`:
+
+#### class: `WcdSnippet`, `wcd-snippet`
+
+##### Superclass
+
+| Name        | Module | Package |
+| ----------- | ------ | ------- |
+| HTMLElement |        |         |
+
+##### Fields
+
+| Name   | Privacy | Type                | Default                                   | Description | Inherited From |
+| ------ | ------- | ------------------- | ----------------------------------------- | ----------- | -------------- |
+| iframe |         | `HTMLIFrameElement` | `this.shadowRoot.querySelector('iframe')` |             |                |
+| button |         | `HTMLButtonElement` | `this.shadowRoot.querySelector('button')` |             |                |
+| url    |         | `URL`               |                                           |             |                |
+| show   |         |                     |                                           |             |                |
+
+##### Methods
+
+| Name | Privacy | Description | Parameters | Return | Inherited From |
+| ---- | ------- | ----------- | ---------- | ------ | -------------- |
+| show |         |             |            | `void` |                |
+| load |         |             |            | `void` |                |
+
+##### Attributes
+
+| Name    | Field | Inherited From |
+| ------- | ----- | -------------- |
+| live    |       |                |
+| data-id |       |                |
+| file    |       |                |
+
+<hr/>
+
+#### Exports
+
+| Kind                      | Name        | Declaration | Module                                | Package |
+| ------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
+| js                        | WcdSnippet  | WcdSnippet  | components/wcd-snippet/wcd-snippet.ts |         |
+| custom-element-definition | wcd-snippet | WcdSnippet  | components/wcd-snippet/wcd-snippet.ts |         |

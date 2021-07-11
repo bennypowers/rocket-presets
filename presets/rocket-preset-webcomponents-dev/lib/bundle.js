@@ -11,6 +11,7 @@ export async function bundle({ path }) {
   const ESBUILD_BUNDLED_WCD_HTML =
     readFileSync(join(path, 'components', 'wcd-snippet', 'wcd-snippet.html'), 'utf8');
 
+  // @ts-expect-error: https://github.com/seriousManual/hirestime/pull/39
   const time = hirestime.default();
 
   await esbuild.build({

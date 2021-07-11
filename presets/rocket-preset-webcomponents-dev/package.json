@@ -4,15 +4,21 @@
   "description": "Rocket plugin for webcomponents.dev snippets",
   "license": "MIT",
   "type": "module",
-  "main": "index.js",
+  "main": "rocket-preset-webcomponents-dev.js",
   "keywords": [
     "rocket",
     "preset",
     "webcomponents.dev"
   ],
+  "scripts": {
+    "analyze": "run-s analyze:*",
+    "analyze:types": "tsc -p tsconfig.jsdoc.json",
+    "analyze:json": "custom-elements-manifest analyze"
+  },
   "dependencies": {
     "@pwrs/esbuild-plugin-replace": "^0.0.2",
     "hirestime": "6.1.0",
     "node-fetch": "2.6.1"
-  }
+  },
+  "customElements": "custom-elements.json"
 }
