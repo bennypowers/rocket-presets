@@ -116,3 +116,7 @@ test/packages/*/docs/*.yml
 
 test-results
 test/tests/*/*-linux.png
+
+*.d.ts
+!types.src.d.ts
+!declaration.d.ts

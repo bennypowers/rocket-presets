@@ -1,22 +1,19 @@
 {
   "include": ["declaration.d.ts"],
+  "exclude": ["node_modules"],
   "compilerOptions": {
     "checkJs": true,
     "allowJs": true,
-    "noEmit": true,
     "target": "es2020",
     "module": "es2020",
+    "declaration": true,
+    "emitDeclarationOnly": true,
     "esModuleInterop": true,
     "useDefineForClassFields": false,
-    "importHelpers": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "sourceMap": true,
     "lib": ["DOM","DOM.Iterable", "ES2019"],
-    "moduleResolution": "Node",
-    "baseUrl": ".",
-    "paths": {
-      "@pwrs/esbuild-plugin-replace": ["./presets/esbuild-plugin-replace/index.cjs"]
-    }
+    "moduleResolution": "Node"
   }
 }
