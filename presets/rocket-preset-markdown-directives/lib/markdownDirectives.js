@@ -1,5 +1,11 @@
+// @ts-expect-error: version mismatch
 import { visit } from 'unist-util-visit';
 
+/**
+ * @param  {string} attr
+ * @param  {string|number|boolean} value
+ * @return {string}
+ */
 function toAttr(attr, value) {
   return (
       !value ? ''
@@ -8,7 +14,15 @@ function toAttr(attr, value) {
   );
 }
 
-export function markdownDirectives({ page, rocketConfig, ...config }) {
+/**
+ * Add custom markdown fenced code block directives to Rocket
+ *
+ * @param  {Partial<import('./types.src').Options>} options
+ * @return {import('unified').Transformer}
+ */
+export function markdownDirectives(options) {
+  const { page, rocketConfig, ...config } = (options);
+  /** @type {import('unified').Transformer} */
   return function transformer(tree, file, next) {
     visit(tree, 'code', function markdownDirectives(node, index, parent) {
       // eslint-disable-next-line easy-loops/easy-loops
@@ -49,7 +63,7 @@ export function markdownDirectives({ page, rocketConfig, ...config }) {
     });
 
     if (typeof next === 'function')
-      return next(null, tree, file);
+      return /** @type{import('unist').Node}*/(next(null, tree, file)); // best guess
     else
       return tree;
   };

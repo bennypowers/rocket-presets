@@ -2,10 +2,14 @@
   "name": "rocket-preset-markdown-directives",
   "version": "0.1.2",
   "description": "Custom markdown fenced code block directives for Rocket",
-  "main": "index.js",
+  "main": "rocket-preset-markdown-directives.js",
+  "types": "rocket-preset-markdown-directives.d.ts",
   "type": "module",
   "author": "Benny Powers <web@bennypowers.com>",
   "license": "ISC",
+  "scripts": {
+    "analyze": "tsc -p tsconfig.jsdoc.json"
+  },
   "dependencies": {
     "markdown-it": "12.1.0",
     "markdown-it-prism": "2.1.8",

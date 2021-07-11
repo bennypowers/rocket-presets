@@ -21,3 +21,8 @@ export function mdDirectives({ directives }) {
 }
 
 export { markdownDirectives, markdownShortcodePlugin };
+
+/** @typedef {import('./lib/types.src').Config} Config */
+/** @typedef {import('./lib/types.src').Options} Options */
+/** @typedef {import('./lib/types.src').TransformerResult} TransformerResult */
+/** @typedef {import('./lib/types.src').TransformerOptions} TransformerOptions */
