@@ -12,6 +12,6 @@
     "rocket-preset-webcomponents-dev": "0.1.2"
   },
   "devDependencies": {
-    "@rocket/launch": "^0.5.3"
+    "@rocket/launch": "^0.5.4"
   }
 }

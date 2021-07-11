@@ -19,7 +19,7 @@
     "test": "run-s test:*",
     "test:build": "cd test && yarn rocket build",
     "test:playwright": "yarn playwright test",
-    "update-snapshots": "yarn playwright test -u"
+    "snapshot": "yarn playwright test -u"
   },
   "dependencies": {
     "@changesets/cli": "^2.16.0"

@@ -31,7 +31,7 @@
             {
               "kind": "field",
               "name": "property",
-              "type": {"text":"boolean"}
+              "type": {"text":"'a'|'b'|'c'"}
             },
             {
               "kind": "field",
