@@ -12,7 +12,7 @@
 
 {% block demo %}{% endblock %}
 
-{% set offset = 1 if moduleContents === 'multiple' else 0 %}
+{% set offset = 1 if modules else 0 %}
 {% set prefix = (declaration.name + '-') if moduleContents === 'multiple' else '' %}
 
 {% if moduleContents === 'multiple' %}
@@ -29,26 +29,26 @@
 
 {% block beforeAttributes %}{% endblock %}
 {% if attributes.length %}
-  {{ linkHeading('Attributes', prefix=prefix, level=2+offset) }}
+  {{ linkHeading('Attributes', prefix=prefix, level=2, levelOffset=offset) }}
   {% for attribute in (attributes | sortClassMembers) %}{% include "./attribute.njk" %}{% endfor %}
 {% endif %}
 
 {% block beforeProperties %}{% endblock %}
 {% if fields.length %}
-  {{ linkHeading('Properties', prefix=prefix, level=2+offset) }}
+  {{ linkHeading('Properties', prefix=prefix, level=2, levelOffset=offset) }}
   {% for property in (fields | sortClassMembers) %}{% include "./property.njk" %}{% endfor %}
 {% endif %}
 {% block afterProperties %}{% endblock %}
 
 {% block beforeMethods %}{% endblock %}
 {% if methods.length %}
-  {{ linkHeading('Methods', prefix=prefix, level=2+offset) }}
+  {{ linkHeading('Methods', prefix=prefix, level=2, levelOffset=offset) }}
   {% for method in (methods | sortClassMembers) %}{% include "./method.njk" %}{% endfor %}
 {% endif %}
 
 {% block beforeSlots %}{% endblock %}
 {% if slots.length %}
-  {{ linkHeading('Slots', prefix=prefix, level=2+offset) }}
+  {{ linkHeading('Slots', prefix=prefix, level=2, levelOffset=offset) }}
   {% for slot in (slots | sortClassMembers) %}
     {% include "./slot.njk" %}
   {% endfor %}
@@ -56,7 +56,7 @@
 
 {% block beforeParts %}{% endblock %}
 {% if cssParts.length %}
-  {{ linkHeading('CSS Shadow Parts', prefix=prefix, level=2+offset) }}
+  {{ linkHeading('CSS Shadow Parts', prefix=prefix, level=2, levelOffset=offset) }}
   <table class="css-parts-table">
     <thead>
       <tr>
@@ -80,7 +80,7 @@
 
 {% block beforeCssCustomProperties %}{% endblock %}
 {% if cssProperties.length %}
-  {{ linkHeading('CSS Custom Properties', prefix=prefix, level=2+offset) }}
+  {{ linkHeading('CSS Custom Properties', prefix=prefix, level=2, levelOffset=offset) }}
   <table class="css-custom-properties-table">
     <thead>
       <tr>
@@ -93,7 +93,11 @@
       {% for cssProp in (cssProperties | sortClassMembers) %}
         <tr>
           <td>{{ cssProp.name }}</td>
-          <td>{{ codeBlock(cssProp.defaultValue, lang="css") }}</td>
+          <td>
+            <css-value-doc>
+              {{ codeBlock(cssProp.default, lang="css") if cssProp.default else '' }}
+            </css-value-doc>
+          </td>
           <td>{{ cssProp.description }}</td>
         </tr>
         {% if cssProp.summary %}
@@ -106,7 +110,7 @@
 
 {% block beforeEvents %}{% endblock %}
 {% if events.length %}
-  {{ linkHeading('Events', prefix=prefix, level=2+offset) }}
+  {{ linkHeading('Events', prefix=prefix, level=2, levelOffset=offset) }}
   <table class="events-table">
     <thead>
       <tr>
@@ -133,12 +137,12 @@
     <summary id="private-api-toggle">Private API</summary>
 
     {% if privateFields.length %}
-      {{ linkHeading('Private Properties', prefix=prefix, level=2+offset, anchor=false) }}
+      {{ linkHeading('Private Properties', prefix=prefix, level=2, levelOffset=offset, anchor=false) }}
       {% for property in (privateFields | sortClassMembers) %}{% include "./property.njk" %}{% endfor %}
     {% endif %}
 
     {% if privateMethods.length %}
-      {{ linkHeading('Private Methods', prefix=prefix, level=2+offset, anchor=false) }}
+      {{ linkHeading('Private Methods', prefix=prefix, level=2, levelOffset=offset, anchor=false) }}
       {% for method in (privateMethods | sortClassMembers) %}{% include "./method.njk" %}{% endfor %}
     {% endif %}
   </details>

@@ -1,3 +1,7 @@
+css-value-doc:not(:defined) {
+  opacity: 1 !important;
+}
+
 type-doc {
   background: var(--type-doc-background, var(--markdown-syntax-background-color));
   position: relative;

@@ -8,6 +8,10 @@ export const isPrivate = x =>
 export const filterMembersBy = p => declaration =>
   (declaration?.members ?? []).filter(p);
 
+/**
+ * @param  {import('custom-elements-manifest/schema').Package} manifest
+ * @param  {string} path
+ */
 export const getModule = (manifest, path) => {
   if (!manifest)
     return undefined;

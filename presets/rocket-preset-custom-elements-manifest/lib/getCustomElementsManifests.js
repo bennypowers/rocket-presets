@@ -7,6 +7,28 @@ import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
 import { getModule } from './manifests.js';
 
+
+/** @typedef {import('custom-elements-manifest/schema').Package} Package */
+/** @typedef {import('custom-elements-manifest/schema').Module} Module */
+/** @typedef {import('package-json-types')} PackageJson */
+/** @typedef {{ manifest: Package; package: PackageJson }} ManifestRecord */
+/** @typedef {Record<string, ManifestRecord>} CollatedManifests */
+
+/** @typedef {{ manifest: Package; packageJson: PackageJson; module: Module; index: Module; modules: Module[] }} ManifestAndPackageRecord */
+
+/**
+ * @typedef {object} Options
+ * @property {string} root
+ * @property {string} [package]
+ * @property {string} [packages="packages/*\/package.json"]
+ */
+
+/**
+ * @param  {object} options
+ * @param  {string} options.cwd
+ * @param  {string} options.path
+ * @return {Promise<CollatedManifests>}
+ */
 async function getPackage({ cwd, path }) {
   try {
     const packagePath = join(cwd, path);
@@ -29,12 +51,17 @@ async function getPackage({ cwd, path }) {
 
 let cached;
 
+/**
+ * @param  {Options} options
+ * @return  {Promise<CollatedManifests>}
+ */
 async function collateManifests(options) {
   if (cached)
     return cached;
 
   console.log(chalk.yellow`[custom-elements-manifest] ${chalk.blue`Reading ${chalk.bold`custom elements manifests`}...`}`);
 
+  // @ts-expect-error: https://github.com/seriousManual/hirestime/pull/39
   const time = hirestime.default();
   const cwd =
       options?.root ? options.root
@@ -58,11 +85,15 @@ async function collateManifests(options) {
 
   return cached;
 }
-
+/**
+ * @param  {Options} options
+ * @return {(data: { package: string; module: string; modules: string[]; }) => Promise<ManifestAndPackageRecord>}         [description]
+ */
 export function getCustomElementsManifests(options) {
   return async data => {
     const manifests = await collateManifests(options);
     const _manifest = manifests?.[data.package]?.manifest;
+    /** @type{Package} */
     const manifest = typeof _manifest === 'string' ? JSON.parse(_manifest) : _manifest;
     const packageJson = manifests?.[data.package]?.package;
     const cem = {

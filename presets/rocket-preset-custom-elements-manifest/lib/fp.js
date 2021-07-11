@@ -10,4 +10,4 @@ export const and = (p, q) => x => p(x) && q(x);
 export const not = p => x => !p(x);
 
 export const trace = (x, tag) =>
-  console.log(tag, x) || x;
+  (console.log(tag, x), x);

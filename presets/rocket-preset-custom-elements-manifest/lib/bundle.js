@@ -6,7 +6,8 @@ import { litCssPlugin } from 'esbuild-plugin-lit-css';
 import { join } from 'path';
 
 export async function bundle({ path }) {
-  console.log(chalk.yellow`[custom-elements-manifest] ${chalk.blue`Building ${chalk.bold`<type-doc>`} and ${chalk.bold`<json-viewer>`}...`}`);
+  console.log(chalk.yellow`[custom-elements-manifest] ${chalk.blue`Building ${chalk.bold`Custom Elements Manifest components`}...`}`);
+  // @ts-expect-error: https://github.com/seriousManual/hirestime/pull/39
   const time = hirestime.default();
   await esbuild.build({
     bundle: true,
@@ -17,6 +18,7 @@ export async function bundle({ path }) {
     outdir: 'docs/_merged_assets/_static/custom-elements-manifest',
     plugins: [litCssPlugin()],
     entryPoints: {
+      'css-value-doc': join(path, 'components', 'css-value-doc', 'css-value-doc.ts'),
       'type-doc': join(path, 'components', 'type-doc', 'type-doc.ts'),
       'json-viewer': '@power-elements/json-viewer',
     },

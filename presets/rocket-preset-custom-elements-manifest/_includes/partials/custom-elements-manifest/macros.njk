@@ -4,7 +4,7 @@
 ```{%- endmarkdown -%}
 {%- endmacro -%}
 
-{%- macro linkHeading(text, content='', level=3, prefix='', class='', slot='', anchor=true) -%}
+{%- macro linkHeading(text, content='', level=3, prefix='', class='', slot='', anchor=true, levelOffset=0) -%}
   {%- set content = content or text -%}
   {%- set id = (prefix + '-' + text) if prefix else text -%}
   {%- set lvl =  level + (levelOffset or 0) -%}

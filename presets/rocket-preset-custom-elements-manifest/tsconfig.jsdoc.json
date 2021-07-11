@@ -1,0 +1,4 @@
+{
+  "extends": "../../tsconfig.jsdoc.json",
+  "include": ["index.js"]
+}

@@ -1,4 +1,6 @@
 export const linkToTypes = options => {
+  if (!options?.typeLinks || Object.keys(options.typeLinks))
+    return x => x;
   const links = new Map(Object.entries(options.typeLinks ?? {}));
   const keys = [...links.keys()];
   const attrs = options.typeLinksNewTab ? ' target="_blank" rel="noopener noreferrer"' : '';

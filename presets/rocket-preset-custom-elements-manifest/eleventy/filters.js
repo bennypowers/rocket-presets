@@ -140,11 +140,9 @@ export function manifestModuleImports(eleventyConfig, configOptions) {
 }
 
 /**
- * @param  {string|Type} stringOrTypeDescriptor
+ * @param  {string|Type} input
  * @return {string}
  */
-export function getTypeString(stringOrTypeDescriptor) {
-  if (!stringOrTypeDescriptor) return '';
-  return typeof stringOrTypeDescriptor === 'string' ? stringOrTypeDescriptor
-  : stringOrTypeDescriptor.text ?? '';
+export function getTypeString(input) {
+  return (typeof input === 'string' ? input : input?.text) ?? '';
 }

@@ -24,6 +24,16 @@ import {
   split,
 } from './filters.js';
 
+/**
+ * @typedef {object} CEMOptions
+ * @property {{ packageName?: string; keepExtension?: boolean; max?: number; }} [imports]
+ * @property {boolean} [typeLinksNewTab=false]
+ * @property {Record<string, string>} [typeLinks]
+ */
+/**
+ * @param  {*} eleventyConfig
+ * @param  {CEMOptions} options
+ */
 export function customElementsManifestPlugin(eleventyConfig, options) {
   eleventyConfig.addFilter('linkToTypes', linkToTypes(options));
 

@@ -12,7 +12,8 @@ import { markdownShortcodePlugin } from 'rocket-preset-markdown-directives';
 const path = resolve(dirname(fileURLToPath(import.meta.url)));
 
 /**
- * @return {Partial<import('@rocket/cli/dist-types/types/main').RocketPreset>}
+ * @param {import('./lib/getCustomElementsManifests').Options & import('./eleventy/custom-elements-manifest').CEMOptions} options
+ * @return {Partial<import('@rocket/cli/dist-types/types/preset').RocketPreset>}
  */
 export function customElementsManifest(options) {
   const { typeLinks } = options ?? {};
@@ -32,7 +33,6 @@ export function customElementsManifest(options) {
         plugin: customElementsManifestPlugin,
         options: {
           typeLinks,
-          path,
           imports: { keepExtension: false },
         },
       }),
@@ -47,10 +47,11 @@ export function customElementsManifest(options) {
         },
       }),
 
-      adjustPluginOptions('auto-import-custom-elements', options => ({
-        ...options ?? {},
+      adjustPluginOptions('auto-import-custom-elements', opts => ({
+        ...opts ?? {},
         specifiers: {
-          ...options?.specifiers,
+          ...opts?.specifiers,
+          'css-value-doc': '/_merged_assets/_static/custom-elements-manifest/css-value-doc.js',
           'type-doc': '/_merged_assets/_static/custom-elements-manifest/type-doc.js',
           'json-viewer': '/_merged_assets/_static/custom-elements-manifest/json-viewer.js',
         },
@@ -62,7 +63,7 @@ export function customElementsManifest(options) {
       addPlugin({
         name: 'cem',
         plugin: getCustomElementsManifests,
-        options,
+        options: options,
       }),
     ],
 
