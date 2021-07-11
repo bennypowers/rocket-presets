@@ -4,7 +4,11 @@
   "description": "Slide Decks in HTML and Markdown for Rocket",
   "license": "MIT",
   "type": "module",
-  "main": "index.js",
+  "main": "rocket-preset-slide-decks.js",
+  "scripts": {
+    "analyze": "run-s analyze:*",
+    "analyze:types": "tsc -p tsconfig.jsdoc.json"
+  },
   "keywords": [
     "rocket",
     "preset",

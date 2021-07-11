@@ -18,6 +18,7 @@ export function slideDecks() {
 
     async before11ty() {
       console.log(chalk.yellow`[slide-decks] ${chalk.blue`Building ${chalk.bold`<slidem-deck>`} and ${chalk.bold`<slidem-slide>`}...`}`);
+      // @ts-expect-error: https://github.com/seriousManual/hirestime/pull/39
       const time = hirestime.default();
       await esbuild.build({
         bundle: true,
