@@ -1,4 +1,4 @@
 {
   "extends": "../../tsconfig.jsdoc.json",
-  "include": ["index.js"]
+  "include": ["custom-elements-manifest.js"]
 }

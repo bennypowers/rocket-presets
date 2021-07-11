@@ -11,7 +11,9 @@
     "custom elements manifest"
   ],
   "scripts": {
-    "analyze": "tsc -p tsconfig.jsdoc.json"
+    "analyze": "run-s analyze:*",
+    "analyze:types": "tsc -p tsconfig.jsdoc.json",
+    "analyze:json": "custom-elements-manifest analyze"
   },
   "dependencies": {
     "@power-elements/json-viewer": "2.1.1",
@@ -23,5 +25,6 @@
     "hirestime": "6.1.0",
     "rocket-preset-markdown-directives": "0.1.3",
     "unist-util-visit": "3.1.0"
-  }
+  },
+  "customElements": "custom-elements.json"
 }

@@ -97,3 +97,215 @@ Content is king! Users with JavaScript disabled get a gracefully degraded experi
 ## Styling
 
 Enjoy consistent site-wide theming by setting `--markdown-syntax-background-color` and `--markdown-table-row-odd-background-color`
+
+## API Docs
+
+
+### `custom-elements-manifest.js`:
+
+#### Functions
+
+| Name                   | Description | Parameters                      | Return                  |
+| ---------------------- | ----------- | ------------------------------- | ----------------------- |
+| customElementsManifest |             | `options: Options & CEMOptions` | `Partial<RocketPreset>` |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name                   | Declaration            | Module                      | Package |
+| ---- | ---------------------- | ---------------------- | --------------------------- | ------- |
+| js   | customElementsManifest | customElementsManifest | custom-elements-manifest.js |         |
+
+### `eleventy/custom-elements-manifest.js`:
+
+#### Functions
+
+| Name                         | Description | Parameters                               | Return |
+| ---------------------------- | ----------- | ---------------------------------------- | ------ |
+| customElementsManifestPlugin |             | `eleventyConfig: *, options: CEMOptions` |        |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name                         | Declaration                  | Module                               | Package |
+| ---- | ---------------------------- | ---------------------------- | ------------------------------------ | ------- |
+| js   | customElementsManifestPlugin | customElementsManifestPlugin | eleventy/custom-elements-manifest.js |         |
+
+### `eleventy/filters.js`:
+
+#### Variables
+
+| Name              | Description | Type |
+| ----------------- | ----------- | ---- |
+| getAllFields      |             |      |
+| getAllMethods     |             |      |
+| getFields         |             |      |
+| getMethods        |             |      |
+| getPrivateFields  |             |      |
+| getPrivateMethods |             |      |
+
+<hr/>
+
+#### Functions
+
+| Name                  | Description                                                | Parameters                                          | Return                   |
+| --------------------- | ---------------------------------------------------------- | --------------------------------------------------- | ------------------------ |
+| isPrivate             |                                                            | `x`                                                 |                          |
+| split                 |                                                            | `x, d`                                              |                          |
+| filterMembersBy       |                                                            | `p`                                                 |                          |
+| getDeclaration        |                                                            | `moduleData, declaration`                           |                          |
+| getExports            |                                                            | `m`                                                 |                          |
+| getAttributes         |                                                            | `declaration`                                       |                          |
+| getCssProperties      |                                                            | `declaration`                                       |                          |
+| getCssParts           |                                                            | `declaration`                                       |                          |
+| getSlots              |                                                            | `declaration`                                       |                          |
+| getEvents             |                                                            | `declaration`                                       |                          |
+| getGitHubURL          |                                                            | `{ repository: { url = '', directory = '' } = {} }` |                          |
+| getHeadings           |                                                            | `module`                                            |                          |
+| sortByProp            |                                                            | `list, prop`                                        |                          |
+| sortClassMembers      | Sort a list of custom-element.json `ClassMember`s          | `list: ClassMember[]`                               | `ClassMember[]`          |
+| nonContent            | Get the non-content blocks from a _joiningBlocks directory | `blocks: Record<string, string>`                    | `Record<string, string>` |
+| manifestModuleImports |                                                            | `eleventyConfig, configOptions`                     |                          |
+| getTypeString         |                                                            | `input: string\|Type`                               | `string`                 |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name                  | Declaration           | Module              | Package |
+| ---- | --------------------- | --------------------- | ------------------- | ------- |
+| js   | isPrivate             | isPrivate             | eleventy/filters.js |         |
+| js   | split                 | split                 | eleventy/filters.js |         |
+| js   | filterMembersBy       | filterMembersBy       | eleventy/filters.js |         |
+| js   | getDeclaration        | getDeclaration        | eleventy/filters.js |         |
+| js   | getAllFields          | getAllFields          | eleventy/filters.js |         |
+| js   | getAllMethods         | getAllMethods         | eleventy/filters.js |         |
+| js   | getFields             | getFields             | eleventy/filters.js |         |
+| js   | getMethods            | getMethods            | eleventy/filters.js |         |
+| js   | getPrivateFields      | getPrivateFields      | eleventy/filters.js |         |
+| js   | getPrivateMethods     | getPrivateMethods     | eleventy/filters.js |         |
+| js   | getExports            | getExports            | eleventy/filters.js |         |
+| js   | getAttributes         | getAttributes         | eleventy/filters.js |         |
+| js   | getCssProperties      | getCssProperties      | eleventy/filters.js |         |
+| js   | getCssParts           | getCssParts           | eleventy/filters.js |         |
+| js   | getSlots              | getSlots              | eleventy/filters.js |         |
+| js   | getEvents             | getEvents             | eleventy/filters.js |         |
+| js   | getGitHubURL          | getGitHubURL          | eleventy/filters.js |         |
+| js   | getHeadings           | getHeadings           | eleventy/filters.js |         |
+| js   | sortByProp            | sortByProp            | eleventy/filters.js |         |
+| js   | sortClassMembers      | sortClassMembers      | eleventy/filters.js |         |
+| js   | nonContent            | nonContent            | eleventy/filters.js |         |
+| js   | manifestModuleImports | manifestModuleImports | eleventy/filters.js |         |
+| js   | getTypeString         | getTypeString         | eleventy/filters.js |         |
+
+### `eleventy/linkToTypes.js`:
+
+#### Functions
+
+| Name        | Description | Parameters | Return |
+| ----------- | ----------- | ---------- | ------ |
+| linkToTypes |             | `options`  |        |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name        | Declaration | Module                  | Package |
+| ---- | ----------- | ----------- | ----------------------- | ------- |
+| js   | linkToTypes | linkToTypes | eleventy/linkToTypes.js |         |
+
+### `eleventy/prettyJson.js`:
+
+#### Functions
+
+| Name       | Description | Parameters | Return |
+| ---------- | ----------- | ---------- | ------ |
+| prettyJson |             | `content`  |        |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name       | Declaration | Module                 | Package |
+| ---- | ---------- | ----------- | ---------------------- | ------- |
+| js   | prettyJson | prettyJson  | eleventy/prettyJson.js |         |
+
+### `components/css-value-doc/css-value-doc.ts`:
+
+#### class: `CssValueDoc`
+
+##### Superclass
+
+| Name       | Module | Package |
+| ---------- | ------ | ------- |
+| LitElement |        | lit     |
+
+##### Fields
+
+| Name      | Privacy | Type      | Default                                         | Description | Inherited From |
+| --------- | ------- | --------- | ----------------------------------------------- | ----------- | -------------- |
+| styles    |         | `array`   | `[style]`                                       |             |                |
+| emptyBody |         | `boolean` | `false`                                         |             |                |
+| color     |         | `string`  |                                                 |             |                |
+| mo        |         |           | `new MutationObserver(() => this.onMutation())` |             |                |
+
+##### Methods
+
+| Name       | Privacy | Description | Parameters | Return           | Inherited From |
+| ---------- | ------- | ----------- | ---------- | ---------------- | -------------- |
+| render     |         |             |            | `TemplateResult` |                |
+| onMutation |         |             |            | `void`           |                |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name        | Declaration | Module                                    | Package |
+| ---- | ----------- | ----------- | ----------------------------------------- | ------- |
+| js   | CssValueDoc | CssValueDoc | components/css-value-doc/css-value-doc.ts |         |
+
+### `components/type-doc/type-doc.ts`:
+
+#### class: `TypeDoc`
+
+##### Superclass
+
+| Name       | Module | Package |
+| ---------- | ------ | ------- |
+| LitElement |        | lit     |
+
+##### Fields
+
+| Name      | Privacy | Type      | Default   | Description | Inherited From |
+| --------- | ------- | --------- | --------- | ----------- | -------------- |
+| styles    |         | `array`   | `[style]` |             |                |
+| expanded  |         | `boolean` | `false`   |             |                |
+| emptyBody |         | `boolean` | `false`   |             |                |
+
+##### Methods
+
+| Name         | Privacy | Description | Parameters | Return           | Inherited From |
+| ------------ | ------- | ----------- | ---------- | ---------------- | -------------- |
+| render       |         |             |            | `TemplateResult` |                |
+| firstUpdated |         |             |            | `void`           |                |
+
+<details><summary>Private API</summary>
+
+##### Methods
+
+| Name            | Privacy | Description | Parameters | Return | Inherited From |
+| --------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| cloneHeading    | private |             |            |        |                |
+| toggleInherited | private |             |            |        |                |
+
+</details>
+
+<hr/>
+
+#### Exports
+
+| Kind | Name    | Declaration | Module                          | Package |
+| ---- | ------- | ----------- | ------------------------------- | ------- |
+| js   | TypeDoc | TypeDoc     | components/type-doc/type-doc.ts |         |
