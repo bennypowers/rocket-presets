@@ -20,6 +20,7 @@ export async function bundle({ path, importMap }) {
   const ESBUILD_BUNDLED_PLAYGROUND_PREVIEW =
     readFileSync(join(componentsDir, 'playground-preview.html'), 'utf8');
 
+  // @ts-expect-error: https://github.com/seriousManual/hirestime/pull/39
   const time = hirestime.default();
 
   await esbuild.build({

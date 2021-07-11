@@ -1,0 +1,217 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "rocket-preset-playground-elements.js",
+      "declarations": [
+        {
+          "kind": "function",
+          "name": "playgroundElements",
+          "parameters": [
+            {
+              "name": "{ importMap = undefined }",
+              "default": "{}"
+            }
+          ],
+          "return": {
+            "type": {
+              "text": "Partial<RocketPreset>"
+            }
+          }
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "playgroundElements",
+          "declaration": {
+            "name": "playgroundElements",
+            "module": "rocket-preset-playground-elements.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "components/docs-playground/docs-playground.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "DocsPlayground",
+          "members": [
+            {
+              "kind": "field",
+              "name": "is",
+              "type": {
+                "text": "'docs-playground'"
+              },
+              "static": true
+            },
+            {
+              "kind": "method",
+              "name": "makePreview",
+              "static": true,
+              "return": {
+                "type": {
+                  "text": "string"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "content",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "$",
+              "return": {
+                "type": {
+                  "text": "HTMLElement | null"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "x",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "field",
+              "name": "playgroundIde",
+              "type": {
+                "text": "PlaygroundIde"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "button",
+              "type": {
+                "text": "HTMLButtonElement"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "file",
+              "type": {
+                "text": "string"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "playgroundUrl",
+              "type": {
+                "text": "string"
+              },
+              "default": "'/_merged_assets/_static/playground-elements/playground.js'"
+            },
+            {
+              "kind": "method",
+              "name": "fetchScript",
+              "static": true,
+              "return": {
+                "type": {
+                  "text": "Promise<string>"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "url",
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "init",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              },
+              "parameters": [
+                {
+                  "name": "config",
+                  "type": {
+                    "text": "ProjectManifest"
+                  }
+                }
+              ]
+            },
+            {
+              "kind": "method",
+              "name": "importPlayground",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "show",
+              "return": {
+                "type": {
+                  "text": "Promise<void>"
+                }
+              }
+            },
+            {
+              "kind": "method",
+              "name": "load",
+              "return": {
+                "type": {
+                  "text": "void"
+                }
+              }
+            },
+            {
+              "kind": "field",
+              "name": "show"
+            }
+          ],
+          "attributes": [
+            {
+              "name": "show"
+            },
+            {
+              "name": "playground-url"
+            }
+          ],
+          "superclass": {
+            "name": "HTMLElement"
+          },
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "DocsPlayground",
+          "declaration": {
+            "name": "DocsPlayground",
+            "module": "components/docs-playground/docs-playground.ts"
+          }
+        },
+        {
+          "kind": "custom-element-definition",
+          "declaration": {
+            "name": "DocsPlayground",
+            "module": "components/docs-playground/docs-playground.ts"
+          }
+        }
+      ]
+    }
+  ]
+}

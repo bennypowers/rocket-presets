@@ -4,17 +4,23 @@
   "description": "Code tabs for Rocket",
   "license": "MIT",
   "type": "module",
-  "main": "index.js",
+  "main": "rocket-preset-playground-elements.js",
   "keywords": [
     "rocket",
     "preset",
     "tabs"
   ],
+  "scripts": {
+    "analyze": "run-s analyze:*",
+    "analyze:types": "tsc -p tsconfig.jsdoc.json",
+    "analyze:json": "custom-elements-manifest analyze"
+  },
   "dependencies": {
     "@pwrs/esbuild-plugin-replace": "^0.0.2",
     "@web/rollup-plugin-copy": "^0.3.0",
     "cpx": "1.5.0",
     "hirestime": "6.1.0",
     "playground-elements": "^0.10.0"
-  }
+  },
+  "customElements": "custom-elements.json"
 }

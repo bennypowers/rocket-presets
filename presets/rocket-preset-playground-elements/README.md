@@ -49,3 +49,71 @@ customElements.define('my-el', class extends HTMLElement {/*...*/});
 ~~~
 
 You must pass at least the `id` arg to the `playground(-*)` directives. See [markdown-directives](../markdown-directives/) for more information.
+
+## API Docs
+
+
+### `rocket-preset-playground-elements.js`:
+
+#### Functions
+
+| Name               | Description | Parameters                  | Return                  |
+| ------------------ | ----------- | --------------------------- | ----------------------- |
+| playgroundElements |             | `{ importMap = undefined }` | `Partial<RocketPreset>` |
+
+<hr/>
+
+#### Exports
+
+| Kind | Name               | Declaration        | Module                               | Package |
+| ---- | ------------------ | ------------------ | ------------------------------------ | ------- |
+| js   | playgroundElements | playgroundElements | rocket-preset-playground-elements.js |         |
+
+### `components/docs-playground/docs-playground.ts`:
+
+#### class: `DocsPlayground`
+
+##### Superclass
+
+| Name        | Module | Package |
+| ----------- | ------ | ------- |
+| HTMLElement |        |         |
+
+##### Fields
+
+| Name          | Privacy | Type                | Default                                                       | Description | Inherited From |
+| ------------- | ------- | ------------------- | ------------------------------------------------------------- | ----------- | -------------- |
+| is            |         | `'docs-playground'` |                                                               |             |                |
+| playgroundIde |         | `PlaygroundIde`     |                                                               |             |                |
+| button        |         | `HTMLButtonElement` |                                                               |             |                |
+| file          |         | `string`            |                                                               |             |                |
+| playgroundUrl |         | `string`            | `'/_merged_assets/_static/playground-elements/playground.js'` |             |                |
+| show          |         |                     |                                                               |             |                |
+
+##### Methods
+
+| Name             | Privacy | Description | Parameters                | Return                | Inherited From |
+| ---------------- | ------- | ----------- | ------------------------- | --------------------- | -------------- |
+| makePreview      |         |             | `content: string`         | `string`              |                |
+| $                |         |             | `x: string`               | `HTMLElement \| null` |                |
+| fetchScript      |         |             | `url: string`             | `Promise<string>`     |                |
+| init             |         |             | `config: ProjectManifest` | `void`                |                |
+| importPlayground |         |             |                           | `Promise<void>`       |                |
+| show             |         |             |                           | `Promise<void>`       |                |
+| load             |         |             |                           | `void`                |                |
+
+##### Attributes
+
+| Name           | Field | Inherited From |
+| -------------- | ----- | -------------- |
+| show           |       |                |
+| playground-url |       |                |
+
+<hr/>
+
+#### Exports
+
+| Kind                      | Name           | Declaration    | Module                                        | Package |
+| ------------------------- | -------------- | -------------- | --------------------------------------------- | ------- |
+| js                        | DocsPlayground | DocsPlayground | components/docs-playground/docs-playground.ts |         |
+| custom-element-definition |                | DocsPlayground | components/docs-playground/docs-playground.ts |         |
