@@ -111,3 +111,5 @@ Content is king! Users with JavaScript disabled get a gracefully degraded experi
 ## Styling
 
 Enjoy consistent site-wide theming by setting `--markdown-syntax-background-color` and `--markdown-table-row-odd-background-color`
+
+## API Docs

@@ -11,8 +11,9 @@
     "tabs"
   ],
   "scripts": {
-    "analyze": "custom-elements-manifest analyze",
-    "preanalyze": "tsc -p tsconfig.jsdoc.json"
+    "analyze": "run-s analyze:*",
+    "analyze:types": "tsc -p tsconfig.jsdoc.json",
+    "analyze:json": "custom-elements-manifest analyze"
   },
   "dependencies": {
     "@pwrs/mixins": "^0.2.0",

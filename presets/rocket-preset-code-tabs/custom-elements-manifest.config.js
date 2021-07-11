@@ -9,6 +9,7 @@ export default ({
     readmePlugin({
       from: dirname(fileURLToPath(import.meta.url)),
       header: 'README.head.md',
+      headingOffset: 2,
     }),
   ],
 });

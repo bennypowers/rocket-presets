@@ -112,10 +112,12 @@ Content is king! Users with JavaScript disabled get a gracefully degraded experi
 
 Enjoy consistent site-wide theming by setting `--markdown-syntax-background-color` and `--markdown-table-row-odd-background-color`
 
+## API Docs
 
-## `rocket-preset-code-tabs.js`:
 
-### Functions
+### `rocket-preset-code-tabs.js`:
+
+#### Functions
 
 | Name     | Description                    | Parameters                 | Return         |
 | -------- | ------------------------------ | -------------------------- | -------------- |
@@ -123,23 +125,23 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 <hr/>
 
-### Exports
+#### Exports
 
 | Kind | Name     | Declaration | Module                     | Package |
 | ---- | -------- | ----------- | -------------------------- | ------- |
 | js   | codeTabs | codeTabs    | rocket-preset-code-tabs.js |         |
 
-## `components/code-copy.ts`:
+### `components/code-copy.ts`:
 
-### class: `CodeCopy`
+#### class: `CodeCopy`
 
-#### Superclass
+##### Superclass
 
 | Name       | Module | Package |
 | ---------- | ------ | ------- |
 | LitElement |        | lit     |
 
-#### Fields
+##### Fields
 
 | Name     | Privacy | Type     | Default                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | Description | Inherited From |
 | -------- | ------- | -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- | -------------- |
@@ -149,20 +151,20 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | success  |         | `string` | `'pending'`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |             |                |
 | timeout  |         | `number` | `2000`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |             |                |
 
-#### Methods
+##### Methods
 
 | Name   | Privacy | Description | Parameters | Return           | Inherited From |
 | ------ | ------- | ----------- | ---------- | ---------------- | -------------- |
 | render |         |             |            | `TemplateResult` |                |
 | onCopy |         |             |            | `Promise<void>`  |                |
 
-#### Events
+##### Events
 
 | Name | Type                  | Description               | Inherited From |
 | ---- | --------------------- | ------------------------- | -------------- |
 | copy | `CustomEvent<string>` | when successfully copying |                |
 
-#### CSS Properties
+##### CSS Properties
 
 | Name                           | Default                    | Description                    |
 | ------------------------------ | -------------------------- | ------------------------------ |
@@ -171,13 +173,13 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | --code-button-focus-background | `hsla(0 100% 0% / 0.75)`   | button background when focused |
 | --code-button-focus-color      | `hsla(0 100% 100% / 0.75)` | button text color when focused |
 
-#### CSS Parts
+##### CSS Parts
 
 | Name        | Description |
 | ----------- | ----------- |
 | copy-button | copy button |
 
-#### Slots
+##### Slots
 
 | Name         | Description                                                                       |
 | ------------ | --------------------------------------------------------------------------------- |
@@ -186,29 +188,29 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 <hr/>
 
-### Exports
+#### Exports
 
 | Kind | Name     | Declaration | Module                  | Package |
 | ---- | -------- | ----------- | ----------------------- | ------- |
 | js   | CodeCopy | CodeCopy    | components/code-copy.ts |         |
 
-## `components/code-tabs.ts`:
+### `components/code-tabs.ts`:
 
-### class: `CodeTabs`
+#### class: `CodeTabs`
 
-#### Superclass
+##### Superclass
 
 | Name       | Module | Package |
 | ---------- | ------ | ------- |
 | LitElement |        | lit     |
 
-#### Mixins
+##### Mixins
 
 | Name        | Module | Package                          |
 | ----------- | ------ | -------------------------------- |
 | SelectMixin |        | @pwrs/mixins/select/select-mixin |
 
-#### Fields
+##### Fields
 
 | Name            | Privacy | Type                            | Default                      | Description                                                                       | Inherited From |
 | --------------- | ------- | ------------------------------- | ---------------------------- | --------------------------------------------------------------------------------- | -------------- |
@@ -219,7 +221,7 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | collection      |         | `string`                        |                              | Which tab collection to use.                                                      |                |
 | onClickTab      |         |                                 |                              |                                                                                   |                |
 
-#### Methods
+##### Methods
 
 | Name         | Privacy | Description | Parameters                      | Return           | Inherited From |
 | ------------ | ------- | ----------- | ------------------------------- | ---------------- | -------------- |
@@ -228,7 +230,7 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | render       |         |             |                                 | `TemplateResult` |                |
 | selectId     | public  |             | `idToSelect: string`            | `void`           |                |
 
-#### CSS Properties
+##### CSS Properties
 
 | Name                                 | Default                    | Description                            |
 | ------------------------------------ | -------------------------- | -------------------------------------- |
@@ -244,7 +246,7 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | --code-button-focus-background       | `hsla(0 100% 0% / 0.75)`   | tab button background when focused     |
 | --code-button-focus-color            | `hsla(0 100% 100% / 0.75)` | tab button text color when focused     |
 
-#### CSS Parts
+##### CSS Parts
 
 | Name              | Description               |
 | ----------------- | ------------------------- |
@@ -255,14 +257,14 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 <details><summary>Private API</summary>
 
-#### Fields
+##### Fields
 
 | Name                 | Privacy   | Type     | Default                  | Description | Inherited From |
 | -------------------- | --------- | -------- | ------------------------ | ----------- | -------------- |
 | labels               | private   |          | `new Map<string, Tab>()` |             |                |
 | initialSelectedIndex | protected | `number` | `0`                      |             |                |
 
-#### Methods
+##### Methods
 
 | Name                    | Privacy   | Description | Parameters                                     | Return            | Inherited From |
 | ----------------------- | --------- | ----------- | ---------------------------------------------- | ----------------- | -------------- |
@@ -277,15 +279,15 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 <hr/>
 
-### class: `CodeTab`
+#### class: `CodeTab`
 
-#### Superclass
+##### Superclass
 
 | Name       | Module | Package |
 | ---------- | ------ | ------- |
 | LitElement |        | lit     |
 
-#### Fields
+##### Fields
 
 | Name   | Privacy | Type      | Default       | Description | Inherited From |
 | ------ | ------- | --------- | ------------- | ----------- | -------------- |
@@ -293,13 +295,13 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | tab    |         | `string`  |               |             |                |
 | noCopy |         | `boolean` | `false`       |             |                |
 
-#### Methods
+##### Methods
 
 | Name   | Privacy | Description | Parameters | Return           | Inherited From |
 | ------ | ------- | ----------- | ---------- | ---------------- | -------------- |
 | render |         |             |            | `TemplateResult` |                |
 
-#### CSS Properties
+##### CSS Properties
 
 | Name                           | Default                    | Description                         |
 | ------------------------------ | -------------------------- | ----------------------------------- |
@@ -308,7 +310,7 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | --code-button-focus-background | `hsla(0 100% 0% / 0.75)`   | copy button background when focused |
 | --code-button-focus-color      | `hsla(0 100% 100% / 0.75)` | copy button text color when focused |
 
-#### CSS Parts
+##### CSS Parts
 
 | Name    | Description               |
 | ------- | ------------------------- |
@@ -316,7 +318,7 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 <hr/>
 
-### Exports
+#### Exports
 
 | Kind | Name     | Declaration | Module                  | Package |
 | ---- | -------- | ----------- | ----------------------- | ------- |
