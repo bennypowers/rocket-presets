@@ -1,6 +1,6 @@
 {
   "name": "rocket-preset-custom-elements-manifest",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Custom Elements Manifest API Docs for Rocket",
   "license": "MIT",
   "type": "module",
@@ -21,7 +21,7 @@
     "get-github-url": "1.0.4",
     "hast-util-is-element": "2.1.0",
     "hirestime": "6.1.0",
-    "rocket-preset-markdown-directives": "0.1.2",
+    "rocket-preset-markdown-directives": "0.1.3",
     "unist-util-visit": "3.1.0"
   }
 }

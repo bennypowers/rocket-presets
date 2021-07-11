@@ -1,6 +1,6 @@
 {
   "name": "rocket-preset-markdown-directives",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Custom markdown fenced code block directives for Rocket",
   "main": "rocket-preset-markdown-directives.js",
   "types": "rocket-preset-markdown-directives.d.ts",

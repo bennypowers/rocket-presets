@@ -1,5 +1,16 @@
 # test
 
+## 0.0.9
+
+### Patch Changes
+
+- Updated dependencies [7c520c5]
+- Updated dependencies [ba66950]
+- Updated dependencies [0db9e74]
+  - rocket-preset-custom-elements-manifest@0.1.3
+  - rocket-preset-code-tabs@0.2.2
+  - rocket-preset-markdown-directives@0.1.3
+
 ## 0.0.8
 
 ### Patch Changes

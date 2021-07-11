@@ -1,5 +1,13 @@
 # rocket-preset-code-tabs
 
+## 0.2.2
+
+### Patch Changes
+
+- ba66950: Better TS types, bug fixes
+- Updated dependencies [0db9e74]
+  - rocket-preset-markdown-directives@0.1.3
+
 ## 0.2.1
 
 ### Patch Changes

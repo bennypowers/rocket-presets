@@ -1,5 +1,12 @@
 # rocket-preset-markdown-directives
 
+## 0.1.3
+
+### Patch Changes
+
+- 0db9e74: Improves TypeScript typings
+  Moves main from `index.js` to `rocket-preset-markdown-directives.js`
+
 ## 0.1.2
 
 ### Patch Changes
