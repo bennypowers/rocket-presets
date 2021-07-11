@@ -12,13 +12,13 @@
   ],
   "scripts": {
     "analyze": "custom-elements-manifest analyze",
-    "postanalyze": "node ./lib/readme.js"
+    "preanalyze": "tsc -p tsconfig.jsdoc.json"
   },
   "dependencies": {
     "@pwrs/mixins": "^0.2.0",
     "eleventy-plugin-add-web-component-definitions": "^2.0.3",
     "esbuild": "^0.12.15",
-    "esbuild-plugin-lit-css": "^1.0.0",
+    "esbuild-plugin-lit-css": "^1.0.2",
     "hirestime": "^6.1.0",
     "lit": "^2.0.0-rc.2",
     "rocket-preset-markdown-directives": "^0.1.1"

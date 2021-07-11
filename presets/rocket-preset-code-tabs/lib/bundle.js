@@ -7,6 +7,7 @@ import { litCssPlugin } from 'esbuild-plugin-lit-css';
 
 export async function bundle({ path }) {
   console.log(chalk.yellow`[code-tabs] ${chalk.blue`Building ${chalk.bold`<code-tabs>`} and ${chalk.bold`<code-copy>`}...`}`);
+  // @ts-expect-error: https://github.com/seriousManual/hirestime/pull/39
   const time = hirestime.default();
 
   await esbuild.build({

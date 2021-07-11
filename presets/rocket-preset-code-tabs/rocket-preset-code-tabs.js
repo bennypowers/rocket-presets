@@ -12,7 +12,8 @@ const dash = str => str.replace(/([a-zA-Z])(?=[A-Z])/g, '$1-').toLowerCase();
 
 const path = resolve(dirname(fileURLToPath(import.meta.url)));
 
-/** @typedef {Record<string, Omit<import('./components/code-tabs').Tab, 'id'>>} Collection */
+/** @typedef {import('./components/code-tabs').Tab} Tab */
+/** @typedef {Record<string, Omit<Tab, 'id'>>} Collection */
 
 /**
  * @typedef {object} CodeTabsOptions
@@ -22,7 +23,7 @@ const path = resolve(dirname(fileURLToPath(import.meta.url)));
 /**
  * Set up code tabs rocket preset
  * @param {CodeTabsOptions} options - tab collections
- * @return {import('@rocket/cli/dist-types/types/main').RocketPreset}
+ * @return {import('@rocket/cli').RocketPreset}
  */
 export function codeTabs(options) {
   const collectionMap = new Map(Object.entries(options?.collections ?? {}).map(([k, v]) => [
@@ -56,11 +57,20 @@ export function codeTabs(options) {
     ],
 
     setupUnifiedPlugins: [
-      addPlugin({ name: 'markdown-directives', plugin: markdownDirectives, location: 'top' }),
-      adjustPluginOptions('markdown-directives', {
-        copy: () => ({ tagName: 'code-copy' }),
-        tab: ([tab], opts) => createTab(tab, collectionMap, opts),
+      addPlugin({
+        name: 'markdown-directives',
+        plugin: markdownDirectives,
+        location: 'top',
+        options,
       }),
+      adjustPluginOptions(
+        'markdown-directives',
+        /** @type{import('rocket-preset-markdown-directives').Config} */
+        ({
+          copy: () => ({ tagName: 'code-copy' }),
+          tab: ([tab], opts) => createTab(tab, collectionMap, opts),
+        })
+      ),
     ],
 
   };
