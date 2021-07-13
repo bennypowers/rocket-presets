@@ -1,5 +1,11 @@
 # rocket-preset-custom-elements-manifest
 
+## 0.1.5
+
+### Patch Changes
+
+- 7150971: Display description and summary for functionlikes
+
 ## 0.1.4
 
 ### Patch Changes
