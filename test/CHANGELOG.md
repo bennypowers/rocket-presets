@@ -1,5 +1,18 @@
 # test
 
+## 0.0.10
+
+### Patch Changes
+
+- Updated dependencies [46ce5c5]
+- Updated dependencies [52689d7]
+- Updated dependencies [c366122]
+- Updated dependencies [26d0cce]
+  - rocket-preset-playground-elements@0.1.2
+  - rocket-preset-slide-decks@0.1.2
+  - rocket-preset-webcomponents-dev@0.1.3
+  - rocket-preset-custom-elements-manifest@0.1.4
+
 ## 0.0.9
 
 ### Patch Changes

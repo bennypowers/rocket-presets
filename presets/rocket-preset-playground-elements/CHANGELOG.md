@@ -1,5 +1,12 @@
 # rocket-preset-playground-elements
 
+## 0.1.2
+
+### Patch Changes
+
+- 46ce5c5: Move main from `index.js` to `rocket-preset-playground-elements.js`
+  Better README
+
 ## 0.1.1
 
 ### Patch Changes

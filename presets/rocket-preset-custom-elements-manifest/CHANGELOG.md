@@ -1,5 +1,11 @@
 # rocket-preset-custom-elements-manifest
 
+## 0.1.4
+
+### Patch Changes
+
+- 26d0cce: Add variables to docs pages
+
 ## 0.1.3
 
 ### Patch Changes

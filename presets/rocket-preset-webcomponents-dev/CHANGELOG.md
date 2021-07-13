@@ -1,5 +1,12 @@
 # rocket-preset-webcomponents-dev
 
+## 0.1.3
+
+### Patch Changes
+
+- c366122: Move main from `index.js` to `rocket-preset-webcomponents-dev.js`
+  Better README
+
 ## 0.1.2
 
 ### Patch Changes

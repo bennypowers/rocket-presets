@@ -1,5 +1,12 @@
 # rocket-preset-slide-decks
 
+## 0.1.2
+
+### Patch Changes
+
+- 52689d7: Move main from `index.js` to `rocket-preset-slide-decks.js`
+  Better README
+
 ## 0.1.1
 
 ### Patch Changes
