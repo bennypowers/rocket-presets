@@ -67,12 +67,5 @@ export function customElementsManifest(options) {
       }),
     ],
 
-    setupBuildPlugins: [
-      adjustPluginOptions('html', ({ exclude, ...options }) => ({ ...options, exclude: [
-        ...Array.isArray(exclude) ? exclude : [exclude].filter(Boolean),
-        '**/playground-service-worker-proxy.html',
-      ] })),
-    ],
-
   };
 }

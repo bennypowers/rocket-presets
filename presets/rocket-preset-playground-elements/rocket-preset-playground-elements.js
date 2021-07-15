@@ -38,6 +38,13 @@ export function playgroundElements({ importMap = undefined } = {}) {
 
     ],
 
+    setupBuildPlugins: [
+      adjustPluginOptions('html', ({ exclude, ...options }) => ({ ...options, exclude: [
+        ...Array.isArray(exclude) ? exclude : [exclude].filter(Boolean),
+        '**/playground-service-worker-proxy.html',
+      ] })),
+    ],
+
     setupUnifiedPlugins: [
       adjustPluginOptions('markdown-directives', {
         'playground': ([id, file]) => ({ tagName: 'docs-playground', attributes: { id, file } }),
