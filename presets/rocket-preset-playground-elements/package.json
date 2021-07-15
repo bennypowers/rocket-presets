@@ -20,7 +20,7 @@
     "@web/rollup-plugin-copy": "^0.3.0",
     "cpx": "1.5.0",
     "hirestime": "6.1.0",
-    "playground-elements": "^0.10.0"
+    "playground-elements": "^0.10.1"
   },
   "customElements": "custom-elements.json"
 }

@@ -7,6 +7,32 @@ const playgroundImportMap =
 const template = document.createElement('template');
 template.innerHTML = `ESBUILD_BUNDLED_PLAYGROUND_HTML`;
 
+/**
+ * @csspart button
+ * @csspart playground-ide
+ *
+ * @slot loader
+ *
+ * @cssprop [--playground-code-font-family=monospace]
+ * @cssprop [--playground-code-font-size=14px]
+ * @cssprop [--playground-border=none]
+ * @cssprop [--playground-ide-width=100%]
+ * @cssprop [--playground-ide-height=100%]
+ *
+ * @cssprop [--playground-snippet-border-radius=6px]
+ * @cssprop [--playground-snippet-border-color=transparent]
+ * @cssprop [--playground-snippet-button-background]
+ * @cssprop [--playground-snippet-outer-background-color=white]
+ * @cssprop [--playground-snippet-button-focus-color=var(--code-button-focus-color)]
+ * @cssprop [--playground-snippet-button-focus-background=var(--code-button-focus-background)]
+ *
+ * @cssprop --code-button-active-color - button background when focused
+ * @cssprop [--code-button-background=var(--markdown-table-row-odd-background-color)] - button background
+ * @cssprop [--code-button-color=inherit] - button text color
+ * @cssprop [--code-button-focus-background=var(--primary-lines-color)] - button background when focused
+ * @cssprop [--code-button-focus-color=inherit] - button text color when focused
+ * @cssprop [--code-border-radius=6px] - border radius for code-copy and code-tabs
+ */
 export class DocsPlayground extends HTMLElement {
   static get is(): 'docs-playground' { return 'docs-playground'; }
 

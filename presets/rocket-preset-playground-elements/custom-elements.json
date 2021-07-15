@@ -41,6 +41,93 @@
           "kind": "class",
           "description": "",
           "name": "DocsPlayground",
+          "cssProperties": [
+            {
+              "name": "--playground-code-font-family",
+              "default": "monospace"
+            },
+            {
+              "name": "--playground-code-font-size",
+              "default": "14px"
+            },
+            {
+              "name": "--playground-border",
+              "default": "none"
+            },
+            {
+              "name": "--playground-ide-width",
+              "default": "100%"
+            },
+            {
+              "name": "--playground-ide-height",
+              "default": "100%"
+            },
+            {
+              "name": "--playground-snippet-border-radius",
+              "default": "6px"
+            },
+            {
+              "name": "--playground-snippet-border-color",
+              "default": "transparent"
+            },
+            {
+              "name": "--playground-snippet-button-background"
+            },
+            {
+              "name": "--playground-snippet-outer-background-color",
+              "default": "white"
+            },
+            {
+              "name": "--playground-snippet-button-focus-color",
+              "default": "var(--code-button-focus-color)"
+            },
+            {
+              "name": "--playground-snippet-button-focus-background",
+              "default": "var(--code-button-focus-background)"
+            },
+            {
+              "description": "button background when focused",
+              "name": "--code-button-active-color"
+            },
+            {
+              "description": "button background",
+              "name": "--code-button-background",
+              "default": "var(--markdown-table-row-odd-background-color)"
+            },
+            {
+              "description": "button text color",
+              "name": "--code-button-color",
+              "default": "inherit"
+            },
+            {
+              "description": "button background when focused",
+              "name": "--code-button-focus-background",
+              "default": "var(--primary-lines-color)"
+            },
+            {
+              "description": "button text color when focused",
+              "name": "--code-button-focus-color",
+              "default": "inherit"
+            },
+            {
+              "description": "border radius for code-copy and code-tabs",
+              "name": "--code-border-radius",
+              "default": "6px"
+            }
+          ],
+          "cssParts": [
+            {
+              "name": "button"
+            },
+            {
+              "name": "playground-ide"
+            }
+          ],
+          "slots": [
+            {
+              "name": "loader"
+            }
+          ],
           "members": [
             {
               "kind": "field",
