@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.1.4
+
+### Patch Changes
+
+- 2c7be89: Use logical CSS properties
+
 ## 0.1.3
 
 ### Patch Changes

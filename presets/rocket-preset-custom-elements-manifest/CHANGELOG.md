@@ -1,5 +1,11 @@
 # rocket-preset-custom-elements-manifest
 
+## 0.1.7
+
+### Patch Changes
+
+- 746fc82: Use logical CSS propertie
+
 ## 0.1.6
 
 ### Patch Changes

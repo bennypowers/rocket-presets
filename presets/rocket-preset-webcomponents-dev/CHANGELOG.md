@@ -1,5 +1,11 @@
 # rocket-preset-webcomponents-dev
 
+## 0.1.4
+
+### Patch Changes
+
+- ee0004d: Use logical CSS properties
+
 ## 0.1.3
 
 ### Patch Changes

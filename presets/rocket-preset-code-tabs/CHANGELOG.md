@@ -1,5 +1,12 @@
 # rocket-preset-code-tabs
 
+## 0.2.4
+
+### Patch Changes
+
+- 23bc952: Use logical CSS properties
+  Fix a11y issues for keyboard and screen reader users
+
 ## 0.2.3
 
 ### Patch Changes
