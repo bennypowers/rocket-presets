@@ -1,17 +1,20 @@
 import { html, LitElement, TemplateResult } from 'lit';
 import { customElement, property, state } from 'lit/decorators.js';
 
-import ButtonStyles from './button.css';
-import CopyStyles from './copy.css';
+import ButtonHostStyles from './button-host.css';
+import CopyStyles from './code-copy.css';
 
 const supportsClipboard = 'clipboard' in navigator;
 
 /**
  * @csspart copy-button - copy button
- * @cssprop [--code-button-background=transparent] - button background
+ *
+ * @cssprop --code-button-active-color - button background when focused
+ * @cssprop [--code-button-background=var(--markdown-table-row-odd-background-color)] - button background
  * @cssprop [--code-button-color=inherit] - button text color
- * @cssprop [--code-button-focus-background=hsla(0 100% 0% / 0.75)] - button background when focused
- * @cssprop [--code-button-focus-color=hsla(0 100% 100% / 0.75)] - button text color when focused
+ * @cssprop [--code-button-focus-background=var(--primary-lines-color)] - button background when focused
+ * @cssprop [--code-button-focus-color=inherit] - button text color when focused
+ * @cssprop [--code-border-radius=6px] - border radius for code-copy and code-tabs
  *
  * @slot copy-icon - Button content
  * @slot success-icon - Button content which alerts on copying. Use `role="alert"` if overriding default.
@@ -21,7 +24,12 @@ const supportsClipboard = 'clipboard' in navigator;
 export class CodeCopy extends LitElement {
   static readonly is = 'code-copy';
 
-  static readonly styles = [ButtonStyles, CopyStyles];
+  static readonly styles = [ButtonHostStyles, CopyStyles];
+
+  static readonly shadowRootOptions: ShadowRootInit = {
+    mode: 'open',
+    delegatesFocus: true,
+  }
 
   static copyIcon = html`
     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24">
@@ -44,12 +52,12 @@ export class CodeCopy extends LitElement {
           ?hidden="${!supportsClipboard}">
         <div part="copy-icon" aria-hidden="${this.success === 'copied'}">
           <slot name="copy-icon">
-            <div aria-label="copy">${CodeCopy.copyIcon}</div>
+            <i aria-label="copy" role="img">${CodeCopy.copyIcon}</i>
           </slot>
         </div>
         <div part="success-icon" aria-hidden="${this.success !== 'copied'}">
           <slot name="success-icon">
-            <div aria-label="copied" role="alert">${CodeCopy.copyIcon}</div>
+            <i aria-label="copied" role="alert">${CodeCopy.copyIcon}</i>
           </slot>
         </div>
       </button>

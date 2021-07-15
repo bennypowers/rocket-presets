@@ -3,10 +3,24 @@
 /** @typedef {import('../components/code-tabs').Tab} Tab*/
 
 /**
+ * @typedef {object} CodeTabAttrsMap
+ * @property {string} data-id
+ * @property {string} data-label
+ * @property {string} [data-icon-href]
+ */
+
+/**
+ * @typedef {object} CodeTabTransformerResult
+ * @property {'code-tab'} tagName
+ * @property {CodeTabAttrsMap} attributes
+ */
+
+/**
  * Makes a Tab element
  * @param  {string} tab Tab ID. For ad-hoc collections, this is also the label.
  * @param  {Map<string, Map<string, Tab>>} collections
  * @param {import('rocket-preset-markdown-directives').TransformerOptions} transformerOptions
+ * @return {CodeTabTransformerResult}
  */
 export function createTab(tab, collections, { node, parent }) {
   let idx = parent.children.findIndex(x => x === node);
@@ -18,6 +32,7 @@ export function createTab(tab, collections, { node, parent }) {
   if (idx < 0 || !child)
     throw new Error(`Could not find parent element for ${tab}. Make sure all tab directives are wrapped in a <code-tabs> element`);
 
+  /** @type{'code-tab'} */
   const tagName = 'code-tab';
 
   try {

@@ -16,7 +16,7 @@
     "analyze:json": "custom-elements-manifest analyze"
   },
   "dependencies": {
-    "@pwrs/mixins": "^0.2.0",
+    "@pwrs/mixins": "^0.2.1",
     "eleventy-plugin-add-web-component-definitions": "^2.0.3",
     "esbuild": "^0.12.15",
     "esbuild-plugin-lit-css": "^1.0.2",

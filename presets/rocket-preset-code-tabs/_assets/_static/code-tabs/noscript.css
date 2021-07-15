@@ -3,7 +3,7 @@
 }
 
 code-tab pre {
-  border-radius: 0 0 6px 6px !important;
+  border-radius: 0 0 var(--code-border-radius) var(--code-border-radius) !important;
 }
 
 code-tab::before {
@@ -12,8 +12,8 @@ code-tab::before {
   margin-top: 8px;
   padding: 3px 5px;
   background: var(--markdown-table-row-odd-background-color);
-  border-top-left-radius: 6px;
-  border-top-right-radius: 6px;
+  border-start-start-radius: var(--code-border-radius);
+  border-start-end-radius: var(--code-border-radius);
   font-size: 13px;
   width: calc(100% - 10px);
 }

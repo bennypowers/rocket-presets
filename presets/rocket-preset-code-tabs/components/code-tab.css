@@ -6,7 +6,15 @@
   display: block;
 }
 
-code-copy {
+[part="content"] {
   display: flex;
   flex: 1;
+}
+
+::slotted(pre) {
+  margin-block-end: 0 !important;
+}
+
+code-copy {
+  margin-block-end: 0;
 }

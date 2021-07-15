@@ -13,6 +13,7 @@
             {
               "name": "options",
               "description": "tab collections",
+              "optional": true,
               "type": {
                 "text": "CodeTabsOptions"
               }
@@ -47,9 +48,13 @@
           "name": "CodeCopy",
           "cssProperties": [
             {
+              "description": "button background when focused",
+              "name": "--code-button-active-color"
+            },
+            {
               "description": "button background",
               "name": "--code-button-background",
-              "default": "transparent"
+              "default": "var(--markdown-table-row-odd-background-color)"
             },
             {
               "description": "button text color",
@@ -59,12 +64,17 @@
             {
               "description": "button background when focused",
               "name": "--code-button-focus-background",
-              "default": "hsla(0 100% 0% / 0.75)"
+              "default": "var(--primary-lines-color)"
             },
             {
               "description": "button text color when focused",
               "name": "--code-button-focus-color",
-              "default": "hsla(0 100% 100% / 0.75)"
+              "default": "inherit"
+            },
+            {
+              "description": "border radius for code-copy and code-tabs",
+              "name": "--code-border-radius",
+              "default": "6px"
             }
           ],
           "cssParts": [
@@ -100,7 +110,16 @@
                 "text": "array"
               },
               "static": true,
-              "default": "[ButtonStyles, CopyStyles]"
+              "default": "[ButtonHostStyles, CopyStyles]"
+            },
+            {
+              "kind": "field",
+              "name": "shadowRootOptions",
+              "type": {
+                "text": "ShadowRootInit"
+              },
+              "static": true,
+              "default": "{\n    mode: 'open',\n    delegatesFocus: true,\n  }"
             },
             {
               "kind": "field",
@@ -188,44 +207,67 @@
               "name": "--code-tabs-tabs-background"
             },
             {
-              "description": "flex justification for tab buttons",
+              "description": "flex justification for tab buttons. Alternatively, set the `align` attribute",
               "name": "--code-tabs-justify-tabs"
             },
             {
-              "description": "content and selected button background",
-              "name": "--code-tabs-background"
+              "description": "tabpanel minimum height",
+              "name": "--code-tabs-min-height",
+              "default": "1px"
             },
             {
               "description": "tabpanel background",
-              "name": "--code-tabs-tabpanel-background"
+              "name": "--code-tabs-tabpanel-background",
+              "default": "var(--markdown-syntax-background-color, #f6f8fa)"
             },
             {
-              "description": "tabpanel minimum height",
-              "name": "--code-tabs-min-height"
+              "description": "content and selected button background",
+              "name": "--code-tabs-background",
+              "default": "var(--markdown-syntax-background-color, #f6f8fa)"
+            },
+            {
+              "description": "border for code-tabs",
+              "name": "--code-tabs-border",
+              "default": "1px solid var(--code-tabs-border-color, var(--primary-color))"
+            },
+            {
+              "description": "border color for code-tabs",
+              "name": "--code-tabs-border-color",
+              "default": "var(--primary-color)"
             },
             {
               "description": "color for selected tab highlight",
-              "name": "--code-tabs-selected-highlight-color"
+              "name": "--code-tabs-selected-highlight-color",
+              "default": "var(--markdown-link-color)"
             },
             {
-              "description": "tab button background",
+              "description": "button background when focused",
+              "name": "--code-button-active-color"
+            },
+            {
+              "description": "button background",
               "name": "--code-button-background",
-              "default": "transparent"
+              "default": "var(--markdown-table-row-odd-background-color)"
             },
             {
-              "description": "tab button text color",
+              "description": "button text color",
               "name": "--code-button-color",
               "default": "inherit"
             },
             {
-              "description": "tab button background when focused",
+              "description": "button background when focused",
               "name": "--code-button-focus-background",
-              "default": "hsla(0 100% 0% / 0.75)"
+              "default": "var(--primary-lines-color)"
             },
             {
-              "description": "tab button text color when focused",
+              "description": "button text color when focused",
               "name": "--code-button-focus-color",
-              "default": "hsla(0 100% 100% / 0.75)"
+              "default": "inherit"
+            },
+            {
+              "description": "border radius for code-copy and code-tabs",
+              "name": "--code-border-radius",
+              "default": "6px"
             }
           ],
           "cssParts": [
@@ -235,7 +277,7 @@
             },
             {
               "description": "container for content",
-              "name": "tabpanel"
+              "name": "tabpanels"
             },
             {
               "description": "tab button",
@@ -263,7 +305,16 @@
                 "text": "array"
               },
               "static": true,
-              "default": "[ButtonStyles, TabsStyles]"
+              "default": "[ButtonHostStyles, TabsStyles]"
+            },
+            {
+              "kind": "field",
+              "name": "keyboardMode",
+              "type": {
+                "text": "string"
+              },
+              "static": true,
+              "default": "'tablist'"
             },
             {
               "kind": "field",
@@ -286,6 +337,15 @@
                 "text": "string"
               },
               "description": "Which tab name to treat as default, in case the use has not yet made a selection."
+            },
+            {
+              "kind": "field",
+              "name": "align",
+              "type": {
+                "text": "'start'|'end'"
+              },
+              "default": "'start'",
+              "description": "Tablist alignment"
             },
             {
               "kind": "field",
@@ -382,6 +442,11 @@
             },
             {
               "kind": "method",
+              "name": "onSlotchange",
+              "privacy": "private"
+            },
+            {
+              "kind": "method",
               "name": "onSelect",
               "return": {
                 "type": {
@@ -458,24 +523,33 @@
           "name": "CodeTab",
           "cssProperties": [
             {
-              "description": "copy button background",
-              "name": "--code-button-background",
-              "default": "transparent"
+              "description": "button background when focused",
+              "name": "--code-button-active-color"
             },
             {
-              "description": "copy button text color",
+              "description": "button background",
+              "name": "--code-button-background",
+              "default": "var(--markdown-table-row-odd-background-color)"
+            },
+            {
+              "description": "button text color",
               "name": "--code-button-color",
               "default": "inherit"
             },
             {
-              "description": "copy button background when focused",
+              "description": "button background when focused",
               "name": "--code-button-focus-background",
-              "default": "hsla(0 100% 0% / 0.75)"
+              "default": "var(--primary-lines-color)"
             },
             {
-              "description": "copy button text color when focused",
+              "description": "button text color when focused",
               "name": "--code-button-focus-color",
-              "default": "hsla(0 100% 100% / 0.75)"
+              "default": "inherit"
+            },
+            {
+              "description": "border radius for code-copy and code-tabs",
+              "name": "--code-border-radius",
+              "default": "6px"
             }
           ],
           "cssParts": [

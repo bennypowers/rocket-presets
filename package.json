@@ -16,6 +16,7 @@
     "release": "run-s release:*",
     "release:docs": "yarn analyze",
     "release:publish": "changeset publish",
+    "start": "cd test && yarn rocket start",
     "test": "run-s test:*",
     "test:build": "cd test && yarn rocket build",
     "test:playwright": "yarn playwright test",
