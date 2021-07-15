@@ -68,33 +68,33 @@ customElements.define('my-counter', MyCounter);
 
 #### Functions
 
-| Name             | Description | Parameters | Return |
-| ---------------- | ----------- | ---------- | ------ |
-| webcomponentsDev |             |            |        |
+| Name               | Description | Parameters | Return |
+| ------------------ | ----------- | ---------- | ------ |
+| `webcomponentsDev` |             |            |        |
 
 <hr/>
 
 #### Exports
 
-| Kind | Name             | Declaration      | Module                             | Package |
-| ---- | ---------------- | ---------------- | ---------------------------------- | ------- |
-| js   | webcomponentsDev | webcomponentsDev | rocket-preset-webcomponents-dev.js |         |
+| Kind | Name               | Declaration      | Module                             | Package |
+| ---- | ------------------ | ---------------- | ---------------------------------- | ------- |
+| `js` | `webcomponentsDev` | webcomponentsDev | rocket-preset-webcomponents-dev.js |         |
 
 ### `eleventy/wcdShortcode.js`:
 
 #### Functions
 
-| Name               | Description | Parameters       | Return |
-| ------------------ | ----------- | ---------------- | ------ |
-| wcdShortcodePlugin |             | `eleventyConfig` |        |
+| Name                 | Description | Parameters       | Return |
+| -------------------- | ----------- | ---------------- | ------ |
+| `wcdShortcodePlugin` |             | `eleventyConfig` |        |
 
 <hr/>
 
 #### Exports
 
-| Kind | Name               | Declaration        | Module                   | Package |
-| ---- | ------------------ | ------------------ | ------------------------ | ------- |
-| js   | wcdShortcodePlugin | wcdShortcodePlugin | eleventy/wcdShortcode.js |         |
+| Kind | Name                 | Declaration        | Module                   | Package |
+| ---- | -------------------- | ------------------ | ------------------------ | ------- |
+| `js` | `wcdShortcodePlugin` | wcdShortcodePlugin | eleventy/wcdShortcode.js |         |
 
 ### `components/wcd-snippet/wcd-snippet.ts`:
 
@@ -102,39 +102,39 @@ customElements.define('my-counter', MyCounter);
 
 ##### Superclass
 
-| Name        | Module | Package |
-| ----------- | ------ | ------- |
-| HTMLElement |        |         |
+| Name          | Module | Package |
+| ------------- | ------ | ------- |
+| `HTMLElement` |        |         |
 
 ##### Fields
 
-| Name   | Privacy | Type                | Default                                   | Description | Inherited From |
-| ------ | ------- | ------------------- | ----------------------------------------- | ----------- | -------------- |
-| iframe |         | `HTMLIFrameElement` | `this.shadowRoot.querySelector('iframe')` |             |                |
-| button |         | `HTMLButtonElement` | `this.shadowRoot.querySelector('button')` |             |                |
-| url    |         | `URL`               |                                           |             |                |
-| show   |         |                     |                                           |             |                |
+| Name     | Privacy | Type                | Default                                   | Description | Inherited From |
+| -------- | ------- | ------------------- | ----------------------------------------- | ----------- | -------------- |
+| `iframe` |         | `HTMLIFrameElement` | `this.shadowRoot.querySelector('iframe')` |             |                |
+| `button` |         | `HTMLButtonElement` | `this.shadowRoot.querySelector('button')` |             |                |
+| `url`    |         | `URL`               |                                           |             |                |
+| `show`   |         |                     |                                           |             |                |
 
 ##### Methods
 
-| Name | Privacy | Description | Parameters | Return | Inherited From |
-| ---- | ------- | ----------- | ---------- | ------ | -------------- |
-| show |         |             |            | `void` |                |
-| load |         |             |            | `void` |                |
+| Name   | Privacy | Description | Parameters | Return | Inherited From |
+| ------ | ------- | ----------- | ---------- | ------ | -------------- |
+| `show` |         |             |            | `void` |                |
+| `load` |         |             |            | `void` |                |
 
 ##### Attributes
 
-| Name    | Field | Inherited From |
-| ------- | ----- | -------------- |
-| live    |       |                |
-| data-id |       |                |
-| file    |       |                |
+| Name      | Field | Inherited From |
+| --------- | ----- | -------------- |
+| `live`    |       |                |
+| `data-id` |       |                |
+| `file`    |       |                |
 
 <hr/>
 
 #### Exports
 
-| Kind                      | Name        | Declaration | Module                                | Package |
-| ------------------------- | ----------- | ----------- | ------------------------------------- | ------- |
-| js                        | WcdSnippet  | WcdSnippet  | components/wcd-snippet/wcd-snippet.ts |         |
-| custom-element-definition | wcd-snippet | WcdSnippet  | components/wcd-snippet/wcd-snippet.ts |         |
+| Kind                        | Name          | Declaration | Module                                | Package |
+| --------------------------- | ------------- | ----------- | ------------------------------------- | ------- |
+| `js`                        | `WcdSnippet`  | WcdSnippet  | components/wcd-snippet/wcd-snippet.ts |         |
+| `custom-element-definition` | `wcd-snippet` | WcdSnippet  | components/wcd-snippet/wcd-snippet.ts |         |
