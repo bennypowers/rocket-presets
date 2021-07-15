@@ -105,132 +105,132 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 #### Functions
 
-| Name                   | Description | Parameters                      | Return                  |
-| ---------------------- | ----------- | ------------------------------- | ----------------------- |
-| customElementsManifest |             | `options: Options & CEMOptions` | `Partial<RocketPreset>` |
+| Name                     | Description | Parameters                      | Return                  |
+| ------------------------ | ----------- | ------------------------------- | ----------------------- |
+| `customElementsManifest` |             | `options: Options & CEMOptions` | `Partial<RocketPreset>` |
 
 <hr/>
 
 #### Exports
 
-| Kind | Name                   | Declaration            | Module                      | Package |
-| ---- | ---------------------- | ---------------------- | --------------------------- | ------- |
-| js   | customElementsManifest | customElementsManifest | custom-elements-manifest.js |         |
+| Kind | Name                     | Declaration            | Module                      | Package |
+| ---- | ------------------------ | ---------------------- | --------------------------- | ------- |
+| `js` | `customElementsManifest` | customElementsManifest | custom-elements-manifest.js |         |
 
 ### `eleventy/custom-elements-manifest.js`:
 
 #### Functions
 
-| Name                         | Description | Parameters                               | Return |
-| ---------------------------- | ----------- | ---------------------------------------- | ------ |
-| customElementsManifestPlugin |             | `eleventyConfig: *, options: CEMOptions` |        |
+| Name                           | Description | Parameters                               | Return |
+| ------------------------------ | ----------- | ---------------------------------------- | ------ |
+| `customElementsManifestPlugin` |             | `eleventyConfig: *, options: CEMOptions` |        |
 
 <hr/>
 
 #### Exports
 
-| Kind | Name                         | Declaration                  | Module                               | Package |
-| ---- | ---------------------------- | ---------------------------- | ------------------------------------ | ------- |
-| js   | customElementsManifestPlugin | customElementsManifestPlugin | eleventy/custom-elements-manifest.js |         |
+| Kind | Name                           | Declaration                  | Module                               | Package |
+| ---- | ------------------------------ | ---------------------------- | ------------------------------------ | ------- |
+| `js` | `customElementsManifestPlugin` | customElementsManifestPlugin | eleventy/custom-elements-manifest.js |         |
 
 ### `eleventy/filters.js`:
 
 #### Variables
 
-| Name              | Description | Type |
-| ----------------- | ----------- | ---- |
-| getAllFields      |             |      |
-| getAllMethods     |             |      |
-| getFields         |             |      |
-| getMethods        |             |      |
-| getPrivateFields  |             |      |
-| getPrivateMethods |             |      |
+| Name                | Description | Type |
+| ------------------- | ----------- | ---- |
+| `getAllFields`      |             |      |
+| `getAllMethods`     |             |      |
+| `getFields`         |             |      |
+| `getMethods`        |             |      |
+| `getPrivateFields`  |             |      |
+| `getPrivateMethods` |             |      |
 
 <hr/>
 
 #### Functions
 
-| Name                  | Description                                                | Parameters                                          | Return                   |
-| --------------------- | ---------------------------------------------------------- | --------------------------------------------------- | ------------------------ |
-| isPrivate             |                                                            | `x`                                                 |                          |
-| split                 |                                                            | `x, d`                                              |                          |
-| filterMembersBy       |                                                            | `p`                                                 |                          |
-| getDeclaration        |                                                            | `moduleData, declaration`                           |                          |
-| getExports            |                                                            | `m`                                                 |                          |
-| getAttributes         |                                                            | `declaration`                                       |                          |
-| getCssProperties      |                                                            | `declaration`                                       |                          |
-| getCssParts           |                                                            | `declaration`                                       |                          |
-| getSlots              |                                                            | `declaration`                                       |                          |
-| getEvents             |                                                            | `declaration`                                       |                          |
-| getGitHubURL          |                                                            | `{ repository: { url = '', directory = '' } = {} }` |                          |
-| getHeadings           |                                                            | `module`                                            |                          |
-| sortByProp            |                                                            | `list, prop`                                        |                          |
-| sortClassMembers      | Sort a list of custom-element.json `ClassMember`s          | `list: ClassMember[]`                               | `ClassMember[]`          |
-| nonContent            | Get the non-content blocks from a _joiningBlocks directory | `blocks: Record<string, string>`                    | `Record<string, string>` |
-| manifestModuleImports |                                                            | `eleventyConfig, configOptions`                     |                          |
-| getTypeString         |                                                            | `input: string\|Type`                               | `string`                 |
+| Name                    | Description                                                | Parameters                                          | Return                   |
+| ----------------------- | ---------------------------------------------------------- | --------------------------------------------------- | ------------------------ |
+| `isPrivate`             |                                                            | `x`                                                 |                          |
+| `split`                 |                                                            | `x, d`                                              |                          |
+| `filterMembersBy`       |                                                            | `p`                                                 |                          |
+| `getDeclaration`        |                                                            | `moduleData, declaration`                           |                          |
+| `getExports`            |                                                            | `m`                                                 |                          |
+| `getAttributes`         |                                                            | `declaration`                                       |                          |
+| `getCssProperties`      |                                                            | `declaration`                                       |                          |
+| `getCssParts`           |                                                            | `declaration`                                       |                          |
+| `getSlots`              |                                                            | `declaration`                                       |                          |
+| `getEvents`             |                                                            | `declaration`                                       |                          |
+| `getGitHubURL`          |                                                            | `{ repository: { url = '', directory = '' } = {} }` |                          |
+| `getHeadings`           |                                                            | `module`                                            |                          |
+| `sortByProp`            |                                                            | `list, prop`                                        |                          |
+| `sortClassMembers`      | Sort a list of custom-element.json `ClassMember`s          | `list: ClassMember[]`                               | `ClassMember[]`          |
+| `nonContent`            | Get the non-content blocks from a _joiningBlocks directory | `blocks: Record<string, string>`                    | `Record<string, string>` |
+| `manifestModuleImports` |                                                            | `eleventyConfig, configOptions`                     |                          |
+| `getTypeString`         |                                                            | `input: string\|Type`                               | `string`                 |
 
 <hr/>
 
 #### Exports
 
-| Kind | Name                  | Declaration           | Module              | Package |
-| ---- | --------------------- | --------------------- | ------------------- | ------- |
-| js   | isPrivate             | isPrivate             | eleventy/filters.js |         |
-| js   | split                 | split                 | eleventy/filters.js |         |
-| js   | filterMembersBy       | filterMembersBy       | eleventy/filters.js |         |
-| js   | getDeclaration        | getDeclaration        | eleventy/filters.js |         |
-| js   | getAllFields          | getAllFields          | eleventy/filters.js |         |
-| js   | getAllMethods         | getAllMethods         | eleventy/filters.js |         |
-| js   | getFields             | getFields             | eleventy/filters.js |         |
-| js   | getMethods            | getMethods            | eleventy/filters.js |         |
-| js   | getPrivateFields      | getPrivateFields      | eleventy/filters.js |         |
-| js   | getPrivateMethods     | getPrivateMethods     | eleventy/filters.js |         |
-| js   | getExports            | getExports            | eleventy/filters.js |         |
-| js   | getAttributes         | getAttributes         | eleventy/filters.js |         |
-| js   | getCssProperties      | getCssProperties      | eleventy/filters.js |         |
-| js   | getCssParts           | getCssParts           | eleventy/filters.js |         |
-| js   | getSlots              | getSlots              | eleventy/filters.js |         |
-| js   | getEvents             | getEvents             | eleventy/filters.js |         |
-| js   | getGitHubURL          | getGitHubURL          | eleventy/filters.js |         |
-| js   | getHeadings           | getHeadings           | eleventy/filters.js |         |
-| js   | sortByProp            | sortByProp            | eleventy/filters.js |         |
-| js   | sortClassMembers      | sortClassMembers      | eleventy/filters.js |         |
-| js   | nonContent            | nonContent            | eleventy/filters.js |         |
-| js   | manifestModuleImports | manifestModuleImports | eleventy/filters.js |         |
-| js   | getTypeString         | getTypeString         | eleventy/filters.js |         |
+| Kind | Name                    | Declaration           | Module              | Package |
+| ---- | ----------------------- | --------------------- | ------------------- | ------- |
+| `js` | `isPrivate`             | isPrivate             | eleventy/filters.js |         |
+| `js` | `split`                 | split                 | eleventy/filters.js |         |
+| `js` | `filterMembersBy`       | filterMembersBy       | eleventy/filters.js |         |
+| `js` | `getDeclaration`        | getDeclaration        | eleventy/filters.js |         |
+| `js` | `getAllFields`          | getAllFields          | eleventy/filters.js |         |
+| `js` | `getAllMethods`         | getAllMethods         | eleventy/filters.js |         |
+| `js` | `getFields`             | getFields             | eleventy/filters.js |         |
+| `js` | `getMethods`            | getMethods            | eleventy/filters.js |         |
+| `js` | `getPrivateFields`      | getPrivateFields      | eleventy/filters.js |         |
+| `js` | `getPrivateMethods`     | getPrivateMethods     | eleventy/filters.js |         |
+| `js` | `getExports`            | getExports            | eleventy/filters.js |         |
+| `js` | `getAttributes`         | getAttributes         | eleventy/filters.js |         |
+| `js` | `getCssProperties`      | getCssProperties      | eleventy/filters.js |         |
+| `js` | `getCssParts`           | getCssParts           | eleventy/filters.js |         |
+| `js` | `getSlots`              | getSlots              | eleventy/filters.js |         |
+| `js` | `getEvents`             | getEvents             | eleventy/filters.js |         |
+| `js` | `getGitHubURL`          | getGitHubURL          | eleventy/filters.js |         |
+| `js` | `getHeadings`           | getHeadings           | eleventy/filters.js |         |
+| `js` | `sortByProp`            | sortByProp            | eleventy/filters.js |         |
+| `js` | `sortClassMembers`      | sortClassMembers      | eleventy/filters.js |         |
+| `js` | `nonContent`            | nonContent            | eleventy/filters.js |         |
+| `js` | `manifestModuleImports` | manifestModuleImports | eleventy/filters.js |         |
+| `js` | `getTypeString`         | getTypeString         | eleventy/filters.js |         |
 
 ### `eleventy/linkToTypes.js`:
 
 #### Functions
 
-| Name        | Description | Parameters | Return |
-| ----------- | ----------- | ---------- | ------ |
-| linkToTypes |             | `options`  |        |
+| Name          | Description | Parameters | Return |
+| ------------- | ----------- | ---------- | ------ |
+| `linkToTypes` |             | `options`  |        |
 
 <hr/>
 
 #### Exports
 
-| Kind | Name        | Declaration | Module                  | Package |
-| ---- | ----------- | ----------- | ----------------------- | ------- |
-| js   | linkToTypes | linkToTypes | eleventy/linkToTypes.js |         |
+| Kind | Name          | Declaration | Module                  | Package |
+| ---- | ------------- | ----------- | ----------------------- | ------- |
+| `js` | `linkToTypes` | linkToTypes | eleventy/linkToTypes.js |         |
 
 ### `eleventy/prettyJson.js`:
 
 #### Functions
 
-| Name       | Description | Parameters | Return |
-| ---------- | ----------- | ---------- | ------ |
-| prettyJson |             | `content`  |        |
+| Name         | Description | Parameters | Return |
+| ------------ | ----------- | ---------- | ------ |
+| `prettyJson` |             | `content`  |        |
 
 <hr/>
 
 #### Exports
 
-| Kind | Name       | Declaration | Module                 | Package |
-| ---- | ---------- | ----------- | ---------------------- | ------- |
-| js   | prettyJson | prettyJson  | eleventy/prettyJson.js |         |
+| Kind | Name         | Declaration | Module                 | Package |
+| ---- | ------------ | ----------- | ---------------------- | ------- |
+| `js` | `prettyJson` | prettyJson  | eleventy/prettyJson.js |         |
 
 ### `components/css-value-doc/css-value-doc.ts`:
 
@@ -238,33 +238,38 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 ##### Superclass
 
-| Name       | Module | Package |
-| ---------- | ------ | ------- |
-| LitElement |        | lit     |
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+##### Static Fields
+
+| Name     | Privacy | Type    | Default   | Description | Inherited From |
+| -------- | ------- | ------- | --------- | ----------- | -------------- |
+| `styles` |         | `array` | `[style]` |             |                |
 
 ##### Fields
 
-| Name      | Privacy | Type      | Default                                         | Description | Inherited From |
-| --------- | ------- | --------- | ----------------------------------------------- | ----------- | -------------- |
-| styles    |         | `array`   | `[style]`                                       |             |                |
-| emptyBody |         | `boolean` | `false`                                         |             |                |
-| color     |         | `string`  |                                                 |             |                |
-| mo        |         |           | `new MutationObserver(() => this.onMutation())` |             |                |
+| Name        | Privacy | Type      | Default                                         | Description | Inherited From |
+| ----------- | ------- | --------- | ----------------------------------------------- | ----------- | -------------- |
+| `emptyBody` |         | `boolean` | `false`                                         |             |                |
+| `color`     |         | `string`  |                                                 |             |                |
+| `mo`        |         |           | `new MutationObserver(() => this.onMutation())` |             |                |
 
 ##### Methods
 
-| Name       | Privacy | Description | Parameters | Return           | Inherited From |
-| ---------- | ------- | ----------- | ---------- | ---------------- | -------------- |
-| render     |         |             |            | `TemplateResult` |                |
-| onMutation |         |             |            | `void`           |                |
+| Name         | Privacy | Description | Parameters | Return           | Inherited From |
+| ------------ | ------- | ----------- | ---------- | ---------------- | -------------- |
+| `render`     |         |             |            | `TemplateResult` |                |
+| `onMutation` |         |             |            | `void`           |                |
 
 <hr/>
 
 #### Exports
 
-| Kind | Name        | Declaration | Module                                    | Package |
-| ---- | ----------- | ----------- | ----------------------------------------- | ------- |
-| js   | CssValueDoc | CssValueDoc | components/css-value-doc/css-value-doc.ts |         |
+| Kind | Name          | Declaration | Module                                    | Package |
+| ---- | ------------- | ----------- | ----------------------------------------- | ------- |
+| `js` | `CssValueDoc` | CssValueDoc | components/css-value-doc/css-value-doc.ts |         |
 
 ### `components/type-doc/type-doc.ts`:
 
@@ -272,33 +277,46 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 ##### Superclass
 
-| Name       | Module | Package |
-| ---------- | ------ | ------- |
-| LitElement |        | lit     |
+| Name         | Module | Package |
+| ------------ | ------ | ------- |
+| `LitElement` |        | lit     |
+
+##### Static Fields
+
+| Name     | Privacy | Type    | Default   | Description | Inherited From |
+| -------- | ------- | ------- | --------- | ----------- | -------------- |
+| `styles` |         | `array` | `[style]` |             |                |
 
 ##### Fields
 
-| Name      | Privacy | Type      | Default   | Description | Inherited From |
-| --------- | ------- | --------- | --------- | ----------- | -------------- |
-| styles    |         | `array`   | `[style]` |             |                |
-| expanded  |         | `boolean` | `false`   |             |                |
-| emptyBody |         | `boolean` | `false`   |             |                |
+| Name        | Privacy | Type      | Default | Description | Inherited From |
+| ----------- | ------- | --------- | ------- | ----------- | -------------- |
+| `expanded`  |         | `boolean` | `false` |             |                |
+| `emptyBody` |         | `boolean` | `false` |             |                |
 
 ##### Methods
 
-| Name         | Privacy | Description | Parameters | Return           | Inherited From |
-| ------------ | ------- | ----------- | ---------- | ---------------- | -------------- |
-| render       |         |             |            | `TemplateResult` |                |
-| firstUpdated |         |             |            | `void`           |                |
+| Name           | Privacy | Description | Parameters | Return           | Inherited From |
+| -------------- | ------- | ----------- | ---------- | ---------------- | -------------- |
+| `render`       |         |             |            | `TemplateResult` |                |
+| `firstUpdated` |         |             |            | `void`           |                |
+
+##### CSS Properties
+
+| Name                            | Default                                                   | Description                            |
+| ------------------------------- | --------------------------------------------------------- | -------------------------------------- |
+| `--type-doc-header-background`  | `var(--markdown-table-row-odd-background-color, #f6f8fa)` | background colour for type doc headers |
+| `--type-doc-background`         | `var(--markdown-syntax-background-color)`                 | type doc body background               |
+| `--type-doc-header-font-family` |                                                           | font family for headers                |
 
 <details><summary>Private API</summary>
 
 ##### Methods
 
-| Name            | Privacy | Description | Parameters | Return | Inherited From |
-| --------------- | ------- | ----------- | ---------- | ------ | -------------- |
-| cloneHeading    | private |             |            |        |                |
-| toggleInherited | private |             |            |        |                |
+| Name              | Privacy | Description | Parameters | Return | Inherited From |
+| ----------------- | ------- | ----------- | ---------- | ------ | -------------- |
+| `cloneHeading`    | private |             |            |        |                |
+| `toggleInherited` | private |             |            |        |                |
 
 </details>
 
@@ -306,6 +324,6 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 #### Exports
 
-| Kind | Name    | Declaration | Module                          | Package |
-| ---- | ------- | ----------- | ------------------------------- | ------- |
-| js   | TypeDoc | TypeDoc     | components/type-doc/type-doc.ts |         |
+| Kind | Name      | Declaration | Module                          | Package |
+| ---- | --------- | ----------- | ------------------------------- | ------- |
+| `js` | `TypeDoc` | TypeDoc     | components/type-doc/type-doc.ts |         |

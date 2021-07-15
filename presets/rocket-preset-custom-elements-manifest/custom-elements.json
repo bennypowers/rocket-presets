@@ -615,6 +615,22 @@
           "kind": "class",
           "description": "",
           "name": "TypeDoc",
+          "cssProperties": [
+            {
+              "description": "background colour for type doc headers",
+              "name": "--type-doc-header-background",
+              "default": "var(--markdown-table-row-odd-background-color, #f6f8fa)"
+            },
+            {
+              "description": "type doc body background",
+              "name": "--type-doc-background",
+              "default": "var(--markdown-syntax-background-color)"
+            },
+            {
+              "description": "font family for headers",
+              "name": "--type-doc-header-font-family"
+            }
+          ],
           "members": [
             {
               "kind": "field",

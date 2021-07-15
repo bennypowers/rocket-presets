@@ -93,12 +93,12 @@ type-doc > [slot="inheritance"] {
 }
 
 type-doc > [slot="name"] {
-  border-top-left-radius: 6px;
+  border-start-start-radius: 6px;
   width: max-content;
 }
 
 type-doc > [slot="type"] {
-  border-top-right-radius: 6px;
+  border-start-end-radius: 6px;
   grid-area: type;
   align-items: center;
 }

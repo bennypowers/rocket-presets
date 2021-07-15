@@ -3,6 +3,11 @@ import { customElement, property } from 'lit/decorators.js';
 
 import style from './type-doc.css';
 
+/**
+ * @cssprop [--type-doc-header-background=var(--markdown-table-row-odd-background-color, #f6f8fa)] - background colour for type doc headers
+ * @cssprop [--type-doc-background=var(--markdown-syntax-background-color)] - type doc body background
+ * @cssprop --type-doc-header-font-family - font family for headers
+ */
 @customElement('type-doc')
 export class TypeDoc extends LitElement {
   static readonly styles = [style];
