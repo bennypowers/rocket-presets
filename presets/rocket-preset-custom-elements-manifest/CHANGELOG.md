@@ -1,5 +1,11 @@
 # rocket-preset-custom-elements-manifest
 
+## 0.1.6
+
+### Patch Changes
+
+- 6996b6c: Correctly read the playground worker html asset
+
 ## 0.1.5
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # test
 
+## 0.0.12
+
+### Patch Changes
+
+- Updated dependencies [6996b6c]
+- Updated dependencies [9b7966d]
+  - rocket-preset-custom-elements-manifest@0.1.6
+  - rocket-preset-playground-elements@0.1.3
+  - rocket-preset-code-tabs@0.2.3
+
 ## 0.0.11
 
 ### Patch Changes

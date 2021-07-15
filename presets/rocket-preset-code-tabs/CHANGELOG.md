@@ -1,5 +1,11 @@
 # rocket-preset-code-tabs
 
+## 0.2.3
+
+### Patch Changes
+
+- 9b7966d: Make options optional
+
 ## 0.2.2
 
 ### Patch Changes
