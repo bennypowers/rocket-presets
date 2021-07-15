@@ -1,48 +1,82 @@
 import { test, expect } from '@playwright/test';
 
-test.describe('JavaScript enabled', () => {
-  test.use({ javaScriptEnabled: true });
+export const tests: Record<string, Parameters<typeof test>[1]> = {
 
-  test('rocket-preset-code-tabs', async ({ page }) => {
+  'rocket-preset-code-tabs': async ({ page }) => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/code-tabs/`, { waitUntil: 'networkidle' });
+
     await (await page.$('code-tabs')).scrollIntoViewIfNeeded();
+    await (await page.$('code-tabs')).waitForElementState('stable');
+
     expect(await page.screenshot({ fullPage: true }))
-      .toMatchSnapshot('code-tabs-initial.png');
+      .toMatchSnapshot('code-tabs-1.png');
+
+    await page.focus('code-tabs [selected]');
+    expect(await page.screenshot({ fullPage: true }))
+      .toMatchSnapshot('code-tabs-selected-focus.png');
+
+    await page.focus('code-tabs #tabs [data-id="yarn"]');
+    expect(await page.screenshot({ fullPage: true }))
+      .toMatchSnapshot('code-tabs-tab-focus.png');
+
     await page.click('code-tabs #tabs [data-id="yarn"]');
     await page.waitForSelector('code-tab[data-id="yarn"]');
+    await (await page.$('code-tabs')).waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
-      .toMatchSnapshot('code-tabs-after-switching.png');
-  });
+      .toMatchSnapshot('code-tabs-tab-switched.png');
 
-  test('rocket-preset-custom-elements-manifest', async ({ page }) => {
+    await page.focus('code-tabs [selected] [part="copy-button"]');
+    await (await page.$('code-tabs')).waitForElementState('stable');
+    expect(await page.screenshot({ fullPage: true }))
+      .toMatchSnapshot('code-tabs-copy-focus.png');
+
+    await page.hover('code-tabs [selected] [part="copy-button"]');
+    await (await page.$('code-tabs')).waitForElementState('stable');
+    expect(await page.screenshot({ fullPage: true }))
+      .toMatchSnapshot('code-tabs-copy-hover.png');
+
+    page.click('code-tabs [selected] [part="copy-button"]', { delay: 200 });
+    await new Promise(r => setTimeout(r, 50));
+    expect(await page.screenshot({ fullPage: true }))
+      .toMatchSnapshot('code-tabs-copy-active.png');
+  },
+
+  'rocket-preset-custom-elements-manifest': async ({ page }) => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/custom-elements-manifest/`, { waitUntil: 'networkidle' });
+
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('custom-elements-manifest-index.png');
+
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/custom-elements-manifest/custom-element/`, { waitUntil: 'networkidle' });
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('custom-elements-manifest-module.png');
+
     await page.click('#private-api-toggle');
     await (await page.$('rocket-navigation')).waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('custom-elements-manifest-private.png');
-  });
+  },
 
-  test('rocket-preset-playground-elements', async ({ page }) => {
+  'rocket-preset-playground-elements': async ({ page }) => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/playground-elements/`, { waitUntil: 'networkidle' });
+
     await (await page.$('docs-playground')).scrollIntoViewIfNeeded();
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('playground-elements-initial.png');
+
     await page.click('docs-playground [part="button"]');
     await page.waitForLoadState('networkidle');
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('playground-elements-after-loaded.png');
-  });
+  },
 
-  test('rocket-preset-webcomponents-dev', async ({ page }) => {
+  'rocket-preset-webcomponents-dev': async ({ page }) => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/webcomponents-dev/`, { waitUntil: 'networkidle' });
+
     await (await page.$('wcd-snippet')).scrollIntoViewIfNeeded();
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('webcomponents-dev-initial.png', { threshold: 0.2 });
+
     await page.click('wcd-snippet [part="button"]');
     await page.waitForLoadState('networkidle');
     const iframe = await page.$('wcd-snippet iframe');
@@ -54,13 +88,15 @@ test.describe('JavaScript enabled', () => {
     await iframe.waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('webcomponents-dev-after-loaded.png', { threshold: 0.2 });
-  });
+  },
 
-  test('rocket-preset-webcomponents-dev-shortcode', async ({ page }) => {
+  'rocket-preset-webcomponents-dev-shortcode': async ({ page }) => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/webcomponents-dev/shortcode/`, { waitUntil: 'networkidle' });
+
     await (await page.$('wcd-snippet')).scrollIntoViewIfNeeded();
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('webcomponents-dev-shortcode-initial.png', { threshold: 0.2 });
+
     await page.click('wcd-snippet [part="button"]');
     await page.waitForLoadState('networkidle');
     const iframe = await page.$('wcd-snippet iframe');
@@ -72,16 +108,19 @@ test.describe('JavaScript enabled', () => {
     await iframe.waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('webcomponents-dev-shortcode-after-loaded.png', { threshold: 0.2 });
-  });
+  },
 
-  test('rocket-preset-slide-decks', async ({ page }) => {
+  'rocket-preset-slide-decks': async ({ page }) => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/slide-decks/test/`, { waitUntil: 'networkidle' });
+
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('slide-decks-initial.png');
+
     await page.press('slidem-deck', 'j');
     for (const el of await page.$$('slidem-slide'))
       await el.waitForElementState('stable');
+
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('slide-decks-next.png');
-  });
-});
+  },
+};

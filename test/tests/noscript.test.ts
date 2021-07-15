@@ -7,7 +7,7 @@ test.describe('noscript', () => {
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/code-tabs/`, { waitUntil: 'networkidle' });
     await (await page.$('code-tabs')).scrollIntoViewIfNeeded();
     expect(await page.screenshot({ fullPage: true }))
-      .toMatchSnapshot('initial-page-load.png');
+      .toMatchSnapshot('code-tabs-1.png');
   });
 
   test('rocket-preset-custom-elements-manifest', async ({ page }) => {
