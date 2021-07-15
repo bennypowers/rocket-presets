@@ -17,12 +17,12 @@ const path = resolve(dirname(fileURLToPath(import.meta.url)));
 
 /**
  * @typedef {object} CodeTabsOptions
- * @property {Record<string, Collection>} collections
+ * @property {Record<string, Collection>} [collections]
  */
 
 /**
  * Set up code tabs rocket preset
- * @param {CodeTabsOptions} options - tab collections
+ * @param {CodeTabsOptions} [options] - tab collections
  * @return {import('@rocket/cli').RocketPreset}
  */
 export function codeTabs(options) {
