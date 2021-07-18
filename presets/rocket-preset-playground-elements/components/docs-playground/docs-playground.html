@@ -82,8 +82,8 @@ button:hover {
 :host(:not([show]):hover) button {
   border-top-color: var(--playground-snippet-focus-border-color, black);
   border-left-color: var(--playground-snippet-focus-border-color, black);
-  border-bottom-color: var(--playground-snippet-outer-background-color, white);
-  border-right-color: var(--playground-snippet-outer-background-color, white);
+  border-bottom-color: var(--playground-snippet-outer-background-color, var(--page-background));
+  border-right-color: var(--playground-snippet-outer-background-color, var(--page-background));
 }
 
 #snippet ::slotted(pre) {

@@ -6,7 +6,7 @@
     width: 100%;
     height: auto;
 
-    --_-button-focus-background: hsla(0 100% 0% / 0.75);
+    --code-button-focus-background: hsla(0 100% 0% / 0.75);
   }
 
   iframe {
@@ -39,18 +39,8 @@
     height: var(--iframe-height, 600px);
   }
 
-  :host([live]) #snippet,
-  :host([live]) button {
-    display: none;
-  }
-
-  :host(:not([live]):focus-within) #snippet,
-  :host(:not([live]):hover) #snippet {
-    border-color: var(--wcd-snippet-focus-border-color, black);
-  }
-
   button {
-    background: var(--wcd-snippet-button-background, hsla(0 100% 100% / 0.9));
+    background: var(--wcd-snippet-button-background);
     border-end-end-radius: 6px;
     border-start-start-radius: 6px;
     color: inherit;
@@ -68,20 +58,30 @@
       color 0.1s ease;
   }
 
+  button:focus,
+  button:hover {
+    color: var(--wcd-snippet-button-focus-color, var(--code-button-focus-color));
+    background: var(--wcd-snippet-button-focus-background, var(--code-button-focus-background));
+    border-bottom-color: var(--wcd-snippet-button-focus-background, var(--code-button-focus-background)) !important;
+    border-right-color: var(--wcd-snippet-button-focus-background, var(--code-button-focus-background)) !important;
+  }
+
+  :host([live]) #snippet,
+  :host([live]) button {
+    display: none;
+  }
+
+  :host(:not([live]):focus-within) #snippet,
+  :host(:not([live]):hover) #snippet {
+    border-color: var(--wcd-snippet-focus-border-color, black);
+  }
+
   :host(:not([live]):focus-within) button,
   :host(:not([live]):hover) button {
     border-top-color: var(--wcd-snippet-focus-border-color, black);
     border-left-color: var(--wcd-snippet-focus-border-color, black);
-    border-bottom-color: var(--wcd-snippet-outer-background-color, white);
-    border-right-color: var(--wcd-snippet-outer-background-color, white);
-  }
-
-  button:focus,
-  button:hover {
-    color: var(--wcd-snippet-button-focus-color, hsla(0 100% 100% / 0.75));
-    background: var(--wcd-snippet-button-focus-background, var(--_-button-focus-background));
-    border-bottom-color: var(--wcd-snippet-button-focus-background, var(--_-button-focus-background)) !important;
-    border-right-color: var(--wcd-snippet-button-focus-background, var(--_-button-focus-background)) !important;
+    border-bottom-color: var(--wcd-snippet-outer-background-color, var(--page-background));
+    border-right-color: var(--wcd-snippet-outer-background-color, var(--page-background));
   }
 
   #snippet ::slotted(pre) {
