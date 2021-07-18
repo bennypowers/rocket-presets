@@ -1,5 +1,12 @@
 # rocket-preset-code-tabs
 
+## 0.2.5
+
+### Patch Changes
+
+- 266be62: Fix code-copy nested in code-tabs
+  Fix highlight border top color
+
 ## 0.2.4
 
 ### Patch Changes

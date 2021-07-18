@@ -1,6 +1,6 @@
 {
   "name": "rocket-preset-webcomponents-dev",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Rocket plugin for webcomponents.dev snippets",
   "license": "MIT",
   "type": "module",

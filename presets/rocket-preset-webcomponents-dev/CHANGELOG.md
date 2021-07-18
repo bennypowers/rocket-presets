@@ -1,5 +1,11 @@
 # rocket-preset-webcomponents-dev
 
+## 0.1.5
+
+### Patch Changes
+
+- bd7d703: Fix colours for edit button
+
 ## 0.1.4
 
 ### Patch Changes

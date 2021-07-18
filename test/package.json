@@ -1,15 +1,15 @@
 {
   "name": "test",
-  "version": "0.0.13",
+  "version": "0.0.14",
   "type": "module",
   "private": true,
   "dependencies": {
-    "rocket-preset-code-tabs": "0.2.4",
+    "rocket-preset-code-tabs": "0.2.5",
     "rocket-preset-custom-elements-manifest": "0.1.7",
     "rocket-preset-markdown-directives": "0.1.3",
-    "rocket-preset-playground-elements": "0.1.4",
+    "rocket-preset-playground-elements": "0.1.5",
     "rocket-preset-slide-decks": "0.1.2",
-    "rocket-preset-webcomponents-dev": "0.1.4"
+    "rocket-preset-webcomponents-dev": "0.1.5"
   },
   "devDependencies": {
     "@rocket/launch": "^0.5.4"
