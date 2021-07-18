@@ -4,6 +4,7 @@
   "parser": "@typescript-eslint/parser",
   "rules": {
     "no-console": "off",
+    "no-invalid-this": "off",
     "require-jsdoc": "off",
     "valid-jsdoc": "off"
   }

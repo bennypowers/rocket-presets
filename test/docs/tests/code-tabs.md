@@ -49,3 +49,32 @@
   ```
 
 </code-tabs>
+
+## Code Copy
+
+```html copy
+A
+```
+
+<div id="elsewhere">
+
+```html
+B
+```
+
+</div>
+<code-copy id="b-copy">Copy the above code</code-copy>
+
+<style>
+#b-copy {
+  display: flex;
+  min-height: 40px;
+  justify-content: end;
+  align-items: center;
+}
+</style>
+
+<script type="module">
+  const copy = document.getElementById('b-copy');
+  copy.host = document.getElementById('elsewhere');
+</script>

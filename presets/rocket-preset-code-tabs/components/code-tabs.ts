@@ -244,6 +244,6 @@ export class CodeTab extends LitElement {
     if (this.noCopy)
       return html`<div part="content"><slot></slot></div>`;
     else
-      return html`<code-copy part="content"><slot></slot></code-copy>`;
+      return html`<code-copy part="content" .host=${this}><slot></slot></code-copy>`;
   }
 }

@@ -39,8 +39,12 @@ export class CodeCopy extends LitElement {
     </svg>
   `;
 
+  /** The element to copy text from. */
+  @state() host: HTMLElement = this;
+
   @state() success = 'pending';
 
+  /** Number of milliseconds to wait after successfully copying before restoring the copy button's icon to 'pending'. */
   @property({ type: Number }) timeout = 2000;
 
   render(): TemplateResult {
@@ -64,8 +68,8 @@ export class CodeCopy extends LitElement {
     `;
   }
 
-  async onCopy(): Promise<void> {
-    const { textContent } = this;
+  private async onCopy(): Promise<void> {
+    const { textContent } = this.host;
     await navigator.clipboard.writeText(textContent.trim());
     this.success = 'copied';
     this.dispatchEvent(new CustomEvent('copy', { detail: textContent }));

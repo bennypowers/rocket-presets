@@ -2,11 +2,13 @@ import { test, expect } from '@playwright/test';
 
 export const tests: Record<string, Parameters<typeof test>[1]> = {
 
-  'rocket-preset-code-tabs': async ({ page }) => {
+  'rocket-preset-code-tabs': async ({ context, page }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+
     await page.goto(`http://localhost:${process.env.SERVER_PORT}/tests/code-tabs/`, { waitUntil: 'networkidle' });
 
     await (await page.$('code-tabs')).scrollIntoViewIfNeeded();
-    await (await page.$('code-tabs')).waitForElementState('stable');
+    await (await page.$('body')).waitForElementState('stable');
 
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('code-tabs-1.png');
@@ -21,17 +23,17 @@ export const tests: Record<string, Parameters<typeof test>[1]> = {
 
     await page.click('code-tabs #tabs [data-id="yarn"]');
     await page.waitForSelector('code-tab[data-id="yarn"]');
-    await (await page.$('code-tabs')).waitForElementState('stable');
+    await (await page.$('body')).waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('code-tabs-tab-switched.png');
 
     await page.focus('code-tabs [selected] [part="copy-button"]');
-    await (await page.$('code-tabs')).waitForElementState('stable');
+    await (await page.$('body')).waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('code-tabs-copy-focus.png');
 
     await page.hover('code-tabs [selected] [part="copy-button"]');
-    await (await page.$('code-tabs')).waitForElementState('stable');
+    await (await page.$('body')).waitForElementState('stable');
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('code-tabs-copy-hover.png');
 
@@ -39,6 +41,19 @@ export const tests: Record<string, Parameters<typeof test>[1]> = {
     await new Promise(r => setTimeout(r, 50));
     expect(await page.screenshot({ fullPage: true }))
       .toMatchSnapshot('code-tabs-copy-active.png');
+
+    expect(await page.evaluate(() => navigator.clipboard.readText()))
+      .toEqual('yarn add rocket-preset-code-tabs');
+
+    await page.click('#code-copy ~ code-copy button', { delay: 200 });
+    await new Promise(r => setTimeout(r, 100));
+    expect(await page.evaluate(() => navigator.clipboard.readText()))
+      .toEqual('A');
+
+    await page.click('#b-copy button', { delay: 200 });
+    await new Promise(r => setTimeout(r, 100));
+    expect(await page.evaluate(() => navigator.clipboard.readText()))
+      .toEqual('B');
   },
 
   'rocket-preset-custom-elements-manifest': async ({ page }) => {

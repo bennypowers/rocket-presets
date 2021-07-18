@@ -20,6 +20,10 @@ img {
   --code-tabs-border: 1px solid var(--code-tabs-border-focus-color, var(--primary-color));
 }
 
+:host(:is(:focus-within, :hover)) #tabs button {
+  border-block-end-color: var(--code-tabs-border-focus-color, var(--primary-color));
+}
+
 #tabs {
   display: flex;
   background: var(--code-tabs-tabs-background);
@@ -36,12 +40,13 @@ img {
   border-start-start-radius: var(--code-border-radius);
   border-start-end-radius: var(--code-border-radius);
   border-block-end: var(--code-tabs-border);
+  border-block-end-color: var(--code-tabs-background, var(--markdown-syntax-background-color, #f6f8fa));
 }
 
 #tabs button[selected] {
   background: var(--code-tabs-background, var(--markdown-syntax-background-color, #f6f8fa));
-  border-block-start: 2px solid var(--code-tabs-selected-highlight-color, var(--markdown-link-color));
   border: var(--code-tabs-border);
+  border-block-start: 2px solid var(--code-tabs-selected-highlight-color, var(--markdown-link-color));
   border-block-end-color: var(--code-tabs-background, var(--markdown-syntax-background-color, #f6f8fa));
   border-block-end-width: 0;
   padding: 9px 15px 11px 15px;
