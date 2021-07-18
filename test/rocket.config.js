@@ -14,9 +14,9 @@ import { dirname, resolve } from 'path';
 // EXPECT tabs to display with script on, and have icons
 const collections = {
   packageManagers: {
-    npm: { label: 'NPM', iconHref: '/_merged_assets/brand-logos/npm.svg' },
-    yarn: { label: 'Yarn', iconHref: '/_merged_assets/brand-logos/yarn.svg' },
-    pnpm: { label: 'PNPM', iconHref: '/_merged_assets/brand-logos/pnpm.svg' },
+    npm: { label: 'NPM', iconHref: '/_merged_assets/_static/brand-logos/npm.svg' },
+    yarn: { label: 'Yarn', iconHref: '/_merged_assets/_static/brand-logos/yarn.svg' },
+    pnpm: { label: 'PNPM', iconHref: '/_merged_assets/_static/brand-logos/pnpm.svg' },
   },
 };
 

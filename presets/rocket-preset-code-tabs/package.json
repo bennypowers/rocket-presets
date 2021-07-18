@@ -1,6 +1,6 @@
 {
   "name": "rocket-preset-code-tabs",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Code tabs for Rocket",
   "license": "MIT",
   "type": "module",

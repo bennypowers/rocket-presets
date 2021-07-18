@@ -1,5 +1,11 @@
 # rocket-preset-code-tabs
 
+## 0.2.6
+
+### Patch Changes
+
+- Default tab slot rendering
+
 ## 0.2.5
 
 ### Patch Changes

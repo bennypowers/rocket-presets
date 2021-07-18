@@ -159,10 +159,9 @@ export class CodeTabs extends SelectMixin(LitElement) {
       </div>
       <div id="tabpanels" part="tabpanels">
         <slot @slotchange="${this.onSlotchange}"></slot>
-      </div>
-
-      <div id="default" ?hidden="${this.selectedItem}" part="default-container">
-        <slot name="default"></slot>
+        <div id="default" ?hidden="${this.selectedItem}" part="default-container">
+          <slot name="default"></slot>
+        </div>
       </div>
     `;
   }
@@ -205,10 +204,6 @@ export class CodeTabs extends SelectMixin(LitElement) {
       INSTANCES.forEach(x => x.selectId(id));
     }
     this.fire('tab-selected', event.target);
-  }
-
-  private getLabel(tag: string) {
-    return this.labels.get(tag) ?? null;
   }
 
   protected initLabels(event?: Event): void {
