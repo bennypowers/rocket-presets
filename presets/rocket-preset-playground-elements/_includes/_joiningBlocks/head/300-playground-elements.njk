@@ -1,1 +1,9 @@
 <noscript><link rel="stylesheet" href="{{ '/_assets/_static/playground-elements/noscript.css' | asset | url }}"></noscript>
+<script type="module">
+(async function loadPolyfills() {
+  if (!('fromEntries' in Object))
+    await import({{ '/_assets/_static/playground-elements/object-fromentries-polyfill.js' | asset | url }})
+  if (!('requestIdleCallback' in window))
+    await import({{ '/_assets/_static/playground-elements/requestidlecallback-polyfill.js' | asset | url }})
+})();
+</script>
