@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.1.6
+
+### Patch Changes
+
+- 624dd74: Add polyfills for requestIdleCallback and Object.fromEntries
+
 ## 0.1.5
 
 ### Patch Changes
