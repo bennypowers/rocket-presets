@@ -1,5 +1,11 @@
 # rocket-preset-code-tabs
 
+## 0.2.7
+
+### Patch Changes
+
+- 14729c3: adds identifying data attrs to head tags
+
 ## 0.2.6
 
 ### Patch Changes

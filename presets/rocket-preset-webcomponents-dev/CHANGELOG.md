@@ -1,5 +1,11 @@
 # rocket-preset-webcomponents-dev
 
+## 0.1.6
+
+### Patch Changes
+
+- 14729c3: adds identifying data attrs to head tags
+
 ## 0.1.5
 
 ### Patch Changes

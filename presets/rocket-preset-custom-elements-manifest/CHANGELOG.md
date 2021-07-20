@@ -1,5 +1,11 @@
 # rocket-preset-custom-elements-manifest
 
+## 0.1.8
+
+### Patch Changes
+
+- 14729c3: adds identifying data attrs to head tags
+
 ## 0.1.7
 
 ### Patch Changes

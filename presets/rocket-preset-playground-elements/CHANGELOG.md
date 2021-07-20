@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.1.7
+
+### Patch Changes
+
+- bc7062b: fix polyfill loader
+
 ## 0.1.6
 
 ### Patch Changes

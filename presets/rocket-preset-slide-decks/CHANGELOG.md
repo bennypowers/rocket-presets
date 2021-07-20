@@ -1,5 +1,11 @@
 # rocket-preset-slide-decks
 
+## 0.1.3
+
+### Patch Changes
+
+- 14729c3: adds identifying data attrs to head tags
+
 ## 0.1.2
 
 ### Patch Changes

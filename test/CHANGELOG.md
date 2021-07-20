@@ -1,5 +1,17 @@
 # test
 
+## 0.0.17
+
+### Patch Changes
+
+- Updated dependencies [14729c3]
+- Updated dependencies [bc7062b]
+  - rocket-preset-code-tabs@0.2.7
+  - rocket-preset-custom-elements-manifest@0.1.8
+  - rocket-preset-slide-decks@0.1.3
+  - rocket-preset-webcomponents-dev@0.1.6
+  - rocket-preset-playground-elements@0.1.7
+
 ## 0.0.16
 
 ### Patch Changes
