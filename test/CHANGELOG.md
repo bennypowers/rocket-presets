@@ -1,5 +1,12 @@
 # test
 
+## 0.0.18
+
+### Patch Changes
+
+- Updated dependencies [c19a0c5]
+  - rocket-preset-custom-elements-manifest@0.1.9
+
 ## 0.0.17
 
 ### Patch Changes

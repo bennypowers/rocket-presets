@@ -1,5 +1,11 @@
 # rocket-preset-custom-elements-manifest
 
+## 0.1.9
+
+### Patch Changes
+
+- c19a0c5: Adds styling for <figure> examples
+
 ## 0.1.8
 
 ### Patch Changes

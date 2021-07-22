@@ -1,6 +1,6 @@
 {
   "name": "rocket-preset-custom-elements-manifest",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Custom Elements Manifest API Docs for Rocket",
   "license": "MIT",
   "type": "module",
