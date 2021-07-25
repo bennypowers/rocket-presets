@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.1.10
+
+### Patch Changes
+
+- dcfaa71: Fix bad import url
+
 ## 0.1.9
 
 ### Patch Changes
