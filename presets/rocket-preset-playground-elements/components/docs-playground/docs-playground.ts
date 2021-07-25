@@ -56,7 +56,7 @@ export class DocsPlayground extends HTMLElement {
     return this.getAttribute('file') ?? 'index.html';
   }
 
-  playgroundUrl = '/_merged_assets/_static/playground-elements/playground.js';
+  playgroundUrl = 'PLAYGROUND_IMPORT';
 
   attributeChangedCallback(name: string, _: string, next: string): void {
     switch (name) {
