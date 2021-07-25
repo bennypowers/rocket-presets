@@ -11,8 +11,14 @@
           "name": "playgroundElements",
           "parameters": [
             {
-              "name": "{ importMap = undefined }",
+              "name": "{ importMap = undefined, playgroundImport }",
               "default": "{}"
+            },
+            {
+              "name": "options",
+              "type": {
+                "text": "{ importMap?: Record<string, string>, playgroundImport?: string }"
+              }
             }
           ],
           "return": {
@@ -299,6 +305,18 @@
           }
         }
       ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "_assets/_static/playground-elements/object-fromentries-polyfill.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "_assets/_static/playground-elements/requestidlecallback-polyfill.js",
+      "declarations": [],
+      "exports": []
     }
   ]
 }

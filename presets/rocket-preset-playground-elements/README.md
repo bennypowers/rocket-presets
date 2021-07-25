@@ -57,9 +57,9 @@ You must pass at least the `id` arg to the `playground(-*)` directives. See [mar
 
 #### Functions
 
-| Name                 | Description | Parameters                  | Return                  |
-| -------------------- | ----------- | --------------------------- | ----------------------- |
-| `playgroundElements` |             | `{ importMap = undefined }` | `Partial<RocketPreset>` |
+| Name                 | Description | Parameters                                                                                                                | Return                  |
+| -------------------- | ----------- | ------------------------------------------------------------------------------------------------------------------------- | ----------------------- |
+| `playgroundElements` |             | `{ importMap = undefined, playgroundImport }, options: { importMap?: Record<string, string>, playgroundImport?: string }` | `Partial<RocketPreset>` |
 
 <hr/>
 

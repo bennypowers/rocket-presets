@@ -9,8 +9,11 @@ import { join } from 'path';
 import { createRequire } from 'module';
 
 let shouldBundlePlayground = true;
+const UNPKG_IMPORT = 'https://unpkg.com/playground-elements?module';
 
-export async function bundle({ path, importMap }) {
+export async function bundle({ path, importMap, playgroundImport = UNPKG_IMPORT }) {
+  const PLAYGROUND_IMPORT = playgroundImport;
+  shouldBundlePlayground &&= PLAYGROUND_IMPORT !== UNPKG_IMPORT;
   console.log(chalk.yellow`[playground-elements] ${chalk.blue`Building ${chalk.bold`<docs-playground>`}${shouldBundlePlayground ? ` and ${chalk.bold`<playground-ide>`}` : ''}...`}`);
   const componentsDir = join(path, 'components', 'docs-playground');
 
@@ -36,6 +39,7 @@ export async function bundle({ path, importMap }) {
         ESBUILD_BUNDLED_IMPORT_MAP: JSON.stringify(importMap ?? {}),
         ESBUILD_BUNDLED_PLAYGROUND_HTML,
         ESBUILD_BUNDLED_PLAYGROUND_PREVIEW,
+        PLAYGROUND_IMPORT,
       }),
     ],
     entryPoints: {

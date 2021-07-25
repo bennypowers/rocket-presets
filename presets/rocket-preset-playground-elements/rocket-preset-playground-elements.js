@@ -9,13 +9,14 @@ import { markdownDirectives } from 'rocket-preset-markdown-directives';
 const path = resolve(dirname(fileURLToPath(import.meta.url)));
 
 /**
+ * @param {{ importMap?: Record<string, string>, playgroundImport?: string }} options
  * @return {Partial<import('@rocket/cli/dist-types/types/main').RocketPreset>}
  */
-export function playgroundElements({ importMap = undefined } = {}) {
+export function playgroundElements({ importMap = undefined, playgroundImport } = {}) {
   return {
     path,
 
-    async before11ty() { await bundle({ path, importMap }); },
+    async before11ty() { await bundle({ path, importMap, playgroundImport }); },
 
     setupEleventyPlugins: [
 
