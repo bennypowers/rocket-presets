@@ -1,5 +1,11 @@
 # rocket-preset-code-tabs
 
+## 0.2.8
+
+### Patch Changes
+
+- f6eaf1e: Update docs
+
 ## 0.2.7
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.1.9
+
+### Patch Changes
+
+- bac5088: Use unpkg for playground-elements
+
 ## 0.1.8
 
 ### Patch Changes
