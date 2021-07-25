@@ -5,6 +5,7 @@
   "license": "MIT",
   "type": "module",
   "main": "rocket-preset-playground-elements.js",
+  "customElements": "custom-elements.json",
   "keywords": [
     "rocket",
     "preset",
@@ -18,9 +19,12 @@
   "dependencies": {
     "@pwrs/esbuild-plugin-replace": "^0.0.2",
     "@web/rollup-plugin-copy": "^0.3.0",
+    "chalk": "4.1.1",
     "cpx": "1.5.0",
+    "eleventy-plugin-add-web-component-definitions": "2.0.3",
+    "esbuild":"0.12.15",
     "hirestime": "6.1.0",
-    "playground-elements": "^0.10.1"
-  },
-  "customElements": "custom-elements.json"
+    "playground-elements": "^0.10.1",
+    "rocket-preset-markdown-directives": "0.1.3"
+  }
 }

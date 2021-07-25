@@ -4,6 +4,7 @@ import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 import { addPlugin, adjustPluginOptions } from 'plugins-manager';
 import { bundle } from './lib/bundle.js';
+import { markdownDirectives } from 'rocket-preset-markdown-directives';
 
 const path = resolve(dirname(fileURLToPath(import.meta.url)));
 
@@ -46,6 +47,7 @@ export function playgroundElements({ importMap = undefined } = {}) {
     ],
 
     setupUnifiedPlugins: [
+      addPlugin({ name: 'markdown-directives', plugin: markdownDirectives, location: 'top' }),
       adjustPluginOptions('markdown-directives', {
         'playground': ([id, file]) => ({ tagName: 'docs-playground', attributes: { id, file } }),
 
