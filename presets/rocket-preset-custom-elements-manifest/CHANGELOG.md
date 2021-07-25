@@ -1,5 +1,11 @@
 # rocket-preset-custom-elements-manifest
 
+## 0.1.10
+
+### Patch Changes
+
+- 47ed45a: Update `globby` dependency
+
 ## 0.1.9
 
 ### Patch Changes
