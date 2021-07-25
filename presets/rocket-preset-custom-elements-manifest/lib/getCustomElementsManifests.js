@@ -1,10 +1,10 @@
 import chalk from 'chalk';
-import globby from 'globby';
 import hirestime from 'hirestime';
 
 import { readFile } from 'fs/promises';
 import { dirname, join } from 'path';
 import { fileURLToPath } from 'url';
+import { globby } from 'globby';
 import { getModule } from './manifests.js';
 
 

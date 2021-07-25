@@ -5,6 +5,7 @@
   "license": "MIT",
   "type": "module",
   "main": "custom-elements-manifest.js",
+  "customElements": "custom-elements.json",
   "keywords": [
     "rocket",
     "preset",
@@ -18,13 +19,13 @@
   "dependencies": {
     "@power-elements/json-viewer": "2.1.1",
     "eleventy-plugin-footnotes": "0.9.0",
-    "esbuild-plugin-lit-css": "^1.0.2",
     "esbuild": "^0.12.15",
+    "esbuild-plugin-lit-css": "^1.0.2",
     "get-github-url": "1.0.4",
-    "hast-util-is-element": "2.1.0",
+    "globby": "^12.0.0",
+    "hast-util-is-element": "2.1.1",
     "hirestime": "6.1.0",
     "rocket-preset-markdown-directives": "0.1.3",
     "unist-util-visit": "3.1.0"
-  },
-  "customElements": "custom-elements.json"
+  }
 }
