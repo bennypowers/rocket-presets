@@ -155,17 +155,17 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 
 ##### Fields
 
-| Name      | Privacy | Type     | Default     | Description | Inherited From |
-| --------- | ------- | -------- | ----------- | ----------- | -------------- |
-| `success` |         | `string` | `'pending'` |             |                |
-| `timeout` |         | `number` | `2000`      |             |                |
+| Name      | Privacy | Type          | Default     | Description                                                                                                     | Inherited From |
+| --------- | ------- | ------------- | ----------- | --------------------------------------------------------------------------------------------------------------- | -------------- |
+| `host`    |         | `HTMLElement` | `this`      | The element to copy text from.                                                                                  |                |
+| `success` |         | `string`      | `'pending'` |                                                                                                                 |                |
+| `timeout` |         | `number`      | `2000`      | Number of milliseconds to wait after successfully copying before restoring the copy button's icon to 'pending'. |                |
 
 ##### Methods
 
 | Name     | Privacy | Description | Parameters | Return           | Inherited From |
 | -------- | ------- | ----------- | ---------- | ---------------- | -------------- |
 | `render` |         |             |            | `TemplateResult` |                |
-| `onCopy` |         |             |            | `Promise<void>`  |                |
 
 ##### Events
 
@@ -196,6 +196,16 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | -------------- | --------------------------------------------------------------------------------- |
 | `copy-icon`    | Button content                                                                    |
 | `success-icon` | Button content which alerts on copying. Use `role="alert"` if overriding default. |
+
+<details><summary>Private API</summary>
+
+##### Methods
+
+| Name     | Privacy | Description | Parameters | Return          | Inherited From |
+| -------- | ------- | ----------- | ---------- | --------------- | -------------- |
+| `onCopy` | private |             |            | `Promise<void>` |                |
+
+</details>
 
 <hr/>
 
@@ -259,7 +269,8 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | `--code-tabs-tabpanel-background`      | `var(--markdown-syntax-background-color, #f6f8fa)`              | tabpanel background                                                          |
 | `--code-tabs-background`               | `var(--markdown-syntax-background-color, #f6f8fa)`              | content and selected button background                                       |
 | `--code-tabs-border`                   | `1px solid var(--code-tabs-border-color, var(--primary-color))` | border for code-tabs                                                         |
-| `--code-tabs-border-color`             | `var(--primary-color)`                                          | border color for code-tabs                                                   |
+| `--code-tabs-border-color`             | `transparent`                                                   | border color for code-tabs                                                   |
+| `--code-tabs-border-focus-color`       | `var(--primary-color)`                                          | border color for code-tabs when focused                                      |
 | `--code-tabs-selected-highlight-color` | `var(--markdown-link-color)`                                    | color for selected tab highlight                                             |
 | `--code-button-active-color`           |                                                                 | button background when focused                                               |
 | `--code-button-background`             | `var(--markdown-table-row-odd-background-color)`                | button background                                                            |
@@ -295,7 +306,6 @@ Enjoy consistent site-wide theming by setting `--markdown-syntax-background-colo
 | `onSlotchange`            | private   |             |                                                |                   |                |
 | `onSelect`                | private   |             |                                                | `void`            |                |
 | `onClickTab`              | private   |             | `event: Event & { target: HTMLButtonElement }` |                   |                |
-| `getLabel`                | private   |             | `tag: string`                                  |                   |                |
 | `initLabels`              | protected |             | `event: Event`                                 | `void`            |                |
 
 </details>

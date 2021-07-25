@@ -129,6 +129,15 @@
             },
             {
               "kind": "field",
+              "name": "host",
+              "type": {
+                "text": "HTMLElement"
+              },
+              "default": "this",
+              "description": "The element to copy text from."
+            },
+            {
+              "kind": "field",
               "name": "success",
               "type": {
                 "text": "string"
@@ -141,7 +150,8 @@
               "type": {
                 "text": "number"
               },
-              "default": "2000"
+              "default": "2000",
+              "description": "Number of milliseconds to wait after successfully copying before restoring the copy button's icon to 'pending'."
             },
             {
               "kind": "method",
@@ -155,6 +165,7 @@
             {
               "kind": "method",
               "name": "onCopy",
+              "privacy": "private",
               "return": {
                 "type": {
                   "text": "Promise<void>"
@@ -233,6 +244,11 @@
             {
               "description": "border color for code-tabs",
               "name": "--code-tabs-border-color",
+              "default": "transparent"
+            },
+            {
+              "description": "border color for code-tabs when focused",
+              "name": "--code-tabs-border-focus-color",
               "default": "var(--primary-color)"
             },
             {
@@ -464,19 +480,6 @@
                   "name": "event",
                   "type": {
                     "text": "Event & { target: HTMLButtonElement }"
-                  }
-                }
-              ]
-            },
-            {
-              "kind": "method",
-              "name": "getLabel",
-              "privacy": "private",
-              "parameters": [
-                {
-                  "name": "tag",
-                  "type": {
-                    "text": "string"
                   }
                 }
               ]
