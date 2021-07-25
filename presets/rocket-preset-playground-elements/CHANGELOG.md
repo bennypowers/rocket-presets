@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.1.8
+
+### Patch Changes
+
+- d23f3ab: Add dependencies
+
 ## 0.1.7
 
 ### Patch Changes
