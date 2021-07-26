@@ -1,5 +1,11 @@
 # rocket-preset-code-tabs
 
+## 0.2.9
+
+### Patch Changes
+
+- Fix keyboard a11y
+
 ## 0.2.8
 
 ### Patch Changes

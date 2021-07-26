@@ -134,7 +134,7 @@ export class CodeTabs extends SelectMixin(LitElement) {
                 id="button-${id}"
                 aria-selected="${this.selectedIndex === i}"
                 aria-controls="${id}"
-                tabindex="${this.selectedIndex === i ? 0 : -1}"
+                tabindex="${this.selectedIndex === i || (this.selectedIndex < 0 && i === 0)? 0 : -1}"
                 ?selected="${this.selectedIndex === i}"
                 @click="${this.onClickTab}">
           <img src="${ifDefined(iconHref)}" role="presentation"/>

@@ -1,5 +1,12 @@
 # test
 
+## 0.0.23
+
+### Patch Changes
+
+- Updated dependencies [undefined]
+  - rocket-preset-code-tabs@0.2.9
+
 ## 0.0.22
 
 ### Patch Changes
