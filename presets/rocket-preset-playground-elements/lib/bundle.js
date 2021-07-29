@@ -9,7 +9,7 @@ import { join } from 'path';
 import { createRequire } from 'module';
 
 let shouldBundlePlayground = true;
-const UNPKG_IMPORT = 'https://unpkg.com/playground-elements?module';
+const UNPKG_IMPORT = 'https://unpkg.com/playground-elements@0.11.0/playground-ide.js?module';
 
 export async function bundle({ path, importMap, playgroundImport = UNPKG_IMPORT }) {
   const PLAYGROUND_IMPORT = playgroundImport;

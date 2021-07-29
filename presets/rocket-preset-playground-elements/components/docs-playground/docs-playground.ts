@@ -70,11 +70,11 @@ export class DocsPlayground extends HTMLElement {
     super();
     this.show = this.show.bind(this);
     this.attachShadow({ mode: 'open' }).append(template.content.cloneNode(true));
-    const url = this.getAttribute('sandbox-base-url');
-    if (url)
-      this.playgroundIde.setAttribute('sandbox-base-url', new URL(url, location.origin).toString());
-    else
-      this.playgroundIde.setAttribute('sandbox-base-url', `${location.origin}/_merged_assets/_static/playground-elements/`);
+    const url = this.getAttribute('playground-base-url');
+    const baseUrl =
+        url ? new URL(url, location.origin).toString()
+      : `${location.origin}/_merged_assets/_static/playground-elements/`;
+    this.playgroundIde.setAttribute('playground-base-url', baseUrl);
     this.button.addEventListener('click', this.show);
   }
 
