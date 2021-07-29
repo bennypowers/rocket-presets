@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.2.2
+
+### Patch Changes
+
+- dc7af88: Fix sandbox url
+
 ## 0.2.1
 
 ### Patch Changes
