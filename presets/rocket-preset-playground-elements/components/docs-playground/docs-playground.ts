@@ -74,7 +74,9 @@ export class DocsPlayground extends HTMLElement {
     const baseUrl =
         url ? new URL(url, location.origin).toString()
       : `${location.origin}/_merged_assets/_static/playground-elements/`;
-    this.playgroundIde.setAttribute('playground-base-url', baseUrl);
+    if (url)
+      this.playgroundIde.setAttribute('playground-base-url', url);
+    this.playgroundIde.setAttribute('sandbox-base-url', baseUrl);
     this.button.addEventListener('click', this.show);
   }
 
