@@ -18,7 +18,7 @@
   "dependencies": {
     "@pwrs/mixins": "^0.2.1",
     "eleventy-plugin-add-web-component-definitions": "^2.0.3",
-    "esbuild": "^0.12.15",
+    "esbuild": "^0.12.17",
     "esbuild-plugin-lit-css": "^1.0.2",
     "hirestime": "^6.1.0",
     "lit": "^2.0.0-rc.2",

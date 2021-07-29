@@ -19,7 +19,7 @@
   "dependencies": {
     "@power-elements/json-viewer": "2.1.1",
     "eleventy-plugin-footnotes": "0.9.0",
-    "esbuild": "^0.12.15",
+    "esbuild": "^0.12.17",
     "esbuild-plugin-lit-css": "^1.0.2",
     "get-github-url": "1.0.4",
     "globby": "^12.0.0",

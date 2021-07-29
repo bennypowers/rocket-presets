@@ -205,7 +205,7 @@
               "type": {
                 "text": "string"
               },
-              "default": "'/_merged_assets/_static/playground-elements/playground.js'"
+              "default": "'PLAYGROUND_IMPORT'"
             },
             {
               "kind": "method",

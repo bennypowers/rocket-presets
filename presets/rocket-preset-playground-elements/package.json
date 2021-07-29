@@ -22,9 +22,9 @@
     "chalk": "4.1.1",
     "cpx": "1.5.0",
     "eleventy-plugin-add-web-component-definitions": "2.0.3",
-    "esbuild": "0.12.15",
+    "esbuild": "0.12.17",
     "hirestime": "6.1.0",
-    "playground-elements": "^0.10.1",
+    "playground-elements": "^0.11.0",
     "rocket-preset-markdown-directives": "0.1.3"
   }
 }

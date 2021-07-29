@@ -94,13 +94,13 @@ You must pass at least the `id` arg to the `playground(-*)` directives. See [mar
 
 ##### Fields
 
-| Name            | Privacy | Type                | Default                                                       | Description | Inherited From |
-| --------------- | ------- | ------------------- | ------------------------------------------------------------- | ----------- | -------------- |
-| `playgroundIde` |         | `PlaygroundIde`     |                                                               |             |                |
-| `button`        |         | `HTMLButtonElement` |                                                               |             |                |
-| `file`          |         | `string`            |                                                               |             |                |
-| `playgroundUrl` |         | `string`            | `'/_merged_assets/_static/playground-elements/playground.js'` |             |                |
-| `show`          |         |                     |                                                               |             |                |
+| Name            | Privacy | Type                | Default               | Description | Inherited From |
+| --------------- | ------- | ------------------- | --------------------- | ----------- | -------------- |
+| `playgroundIde` |         | `PlaygroundIde`     |                       |             |                |
+| `button`        |         | `HTMLButtonElement` |                       |             |                |
+| `file`          |         | `string`            |                       |             |                |
+| `playgroundUrl` |         | `string`            | `'PLAYGROUND_IMPORT'` |             |                |
+| `show`          |         |                     |                       |             |                |
 
 ##### Methods
 
