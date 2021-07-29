@@ -1,5 +1,11 @@
 # rocket-preset-custom-elements-manifest
 
+## 0.1.11
+
+### Patch Changes
+
+- fa43d10: update dependencies
+
 ## 0.1.10
 
 ### Patch Changes

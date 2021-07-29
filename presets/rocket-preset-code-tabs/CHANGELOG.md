@@ -1,5 +1,11 @@
 # rocket-preset-code-tabs
 
+## 0.2.10
+
+### Patch Changes
+
+- fa43d10: update dependencies
+
 ## 0.2.9
 
 ### Patch Changes

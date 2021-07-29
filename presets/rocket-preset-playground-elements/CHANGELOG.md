@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.2.1
+
+### Patch Changes
+
+- fa43d10: update dependencies
+
 ## 0.2.0
 
 ### Minor Changes
