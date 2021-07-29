@@ -1,5 +1,12 @@
 # test
 
+## 0.0.24
+
+### Patch Changes
+
+- Updated dependencies [5fa0e8a]
+  - rocket-preset-playground-elements@0.2.0
+
 ## 0.0.23
 
 ### Patch Changes
