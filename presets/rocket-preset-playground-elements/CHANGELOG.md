@@ -1,5 +1,11 @@
 # rocket-preset-playground-elements
 
+## 0.2.0
+
+### Minor Changes
+
+- 5fa0e8a: Use playground-elements 0.11
+
 ## 0.1.10
 
 ### Patch Changes
